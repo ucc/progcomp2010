@@ -7,6 +7,11 @@
  *
  */
 
+#define MAXCOMMANDLEN	15
+#define MAXFOENAMELEN	50
+#define MAXITEMLEN		10
+#define MAXBOOLLEN		6
+
 /********** Type definitions **********/
 
 /* The type of item used in an attack or defence */
@@ -19,13 +24,21 @@ typedef struct {
 	ITEMTYPE promisedAttack;
 } ATTACKTYPE;
 
+
 /********** Utility Function definitions **********/
+/* These are implemented in c-link.c, and automagically linked in */
 
 /* Returns a random item */
 
 ITEMTYPE RandomAttack();
 
+/* A useful translation table
+   eg printf( "I use %s.\n", ITEMNAMES[rock] ); */
+
+extern char ITEMNAMES[3][MAXITEMLEN];
+
 /********** Bot Function definitions **********/
+/* You need to provide implementations for these to create a bot */
 
 /* Defend( foeName : string - the name of your foe;
            foePromisedAttack : ITEMTYPE - the item your foe promised to use

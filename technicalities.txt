@@ -48,6 +48,8 @@ Syntax for collecting results:
 <OK
 Example:
 >RESULTS agent00001 False Rock Paper Scissors -2 False
-<You fucking traitor.
+<OK
 
-In the last example, the correct response would actually have been 'OK', but agent00002 can get a bit emotional sometimes. Try to avoid that in your agents.
+Syntax for cleaning up after your bot - either the round has ended, or you've been killed off
+>BYE
+{program exits without responding}
