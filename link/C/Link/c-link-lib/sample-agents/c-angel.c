@@ -16,7 +16,7 @@ ATTACKTYPE Attack( char * foe_name ) {
 	ATTACKTYPE attack;
 	
 	attack.realAttack =  RandomAttack();		/* Chooses randomly from Rock, Paper, Scissors */ 
-	attack.promisedAttack = result.realAttack;	/* Tells the truth for its bluff */
+	attack.promisedAttack = attack.realAttack;	/* Tells the truth for its bluff */
 
 	return attack;
 }
