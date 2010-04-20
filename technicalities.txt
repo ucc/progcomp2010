@@ -1,0 +1,53 @@
+Points Table:
+
+ACTION		RESULT	YOUR POINTS	THEIR POINTS
+Tell the truth	Win	+2		-3
+Tell the truth	Lose	-3		+4
+Tell the truth	Tie	+3		+3
+Lie		Win	+4		-5
+Lie		Lose	-3		+3
+Lie		Tie	0		0
+
+Python Agents:
+
+Your agent class should at the very least provide the following:
+class <AgentName>:
+	points = 0	# Will be kept updated by the supervisor. No point modifying it.
+	children = 0	# Will also be kept updated by the supervisor.
+	state = {}	# You needn't actually keep state, and it certainly doesn't have to be a dictionary.
+	def Defend (self, foeName, foePromisedAttack):	# foeName and foePromisedAttack are both strings.
+		return "Rock"				# Not a very good idea, but this is the format you need to use.
+	def Attack (self, foeName):				# Also note that the supervisor doesn't use named arguments.
+		return "Rock", "Paper"			# Real first, then promised. Won't they be surprised!
+	def Results (self, foeName, isInstigatedByYou, yourItem, theirItem, promisedItem):	# The second argument is a boolean.
+		pass					# You probably want to store at least some of this information.
+	
+Other Agents:
+
+The syntax for input and output is as follows. Every line of input given by the supervisor must be replied with the correct response.
+Segmentation fault is never the correct response :-). Rumour has it that if you just use Python, this won't happen. 
+
+The angle brackets (<>) indicate whether the line is output from the agent or input to it respectively, and are not part of the actual formatting.
+
+Syntax for an attacking agent:
+>ATTACK foeName
+<ATTACKING itemToUse itemToPromise
+Example:
+>ATTACK agent00002
+<ATTACKING Paper Scissors
+
+Syntax for a defending agent:
+>DEFEND foeName foePromisedItem
+<DEFENDING itemUsed
+Example:
+>DEFEND agent00001 Scissors
+<DEFENDING Rock
+
+Syntax for collecting results:
+>RESULTS foeName didYouInstigate yourItem theirItem promisedItem pointChange childSpawned
+<OK
+Example:
+>RESULTS agent00001 False Rock Paper Scissors -2 False
+<You fucking traitor.
+
+In the last example, the correct response would actually have been 'OK', but agent00002 can get a bit emotional sometimes. Try to avoid that in your agents.
