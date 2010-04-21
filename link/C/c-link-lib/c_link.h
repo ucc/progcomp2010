@@ -1,5 +1,5 @@
 /*
- *  c-link.h
+ *  c_link.h
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 19/04/10.

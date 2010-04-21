@@ -8,7 +8,7 @@
  */
 
 
-#include <c-link.h>
+#include <c_link.h>
 
 /* Implement the streetfighter bot, which thinks everyone has it in for him. */
 

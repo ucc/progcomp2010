@@ -7,7 +7,7 @@
  *
  */
 
-#include <c-link.h>
+#include <c_link.h>
 
 /* Implement the angel bot, which always tells the truth
    and expects others to do the same */

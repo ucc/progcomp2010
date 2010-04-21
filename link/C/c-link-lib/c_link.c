@@ -1,5 +1,5 @@
 /*
- *  c-link.c
+ *  c_link.c
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 19/04/10.
@@ -7,17 +7,15 @@
  *
  */
 
-#include "c-link.h"
+#include "c_link.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
 
-/* If you just want to write a bot, you don't need to read this file.
+/* You don't need to read this file.
    This merely sets up the I/O for you, so all you have to do is define the bot
-   functions defined in <c-link.h>
- 
-   The only reason you would care about this info is if you want to use pointChange
-   and/or childSpawned parameters from the RESULTS call, which are otherwise discarded.
+   functions defined in <c_link.h>
  */
 
 char ITEMNAMES[3][MAXITEMLEN] = {"Rock", "Paper", "Scissors"};

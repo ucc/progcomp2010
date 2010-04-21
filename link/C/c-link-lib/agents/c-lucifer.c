@@ -8,7 +8,7 @@
  */
 
 
-#include <c-link.h>
+#include <c_link.h>
 
 /* Implement the lucifer bot, which always lies expecting people to be good
    and always goes for the kill */
