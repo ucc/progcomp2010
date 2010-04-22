@@ -11,8 +11,6 @@ LINKLIB=libc_link.a
 AGENTSRCS=$(wildcard agents/*.c)
 AGENTS=$(AGENTSRCS:.c=)
 
-EXECUTABLE=rps-c
-
 all: $(LINKSRCS) $(LINKLIB) $(AGENTS)
 	
 $(LINKLIB): $(LINKOBJS)

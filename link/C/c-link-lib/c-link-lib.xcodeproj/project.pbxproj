@@ -11,6 +11,7 @@
 		2291A1BD117EE3FD00854CBE /* c-angel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-angel.c"; sourceTree = "<group>"; };
 		2291A1BE117EE3FD00854CBE /* c-lucifer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-lucifer.c"; sourceTree = "<group>"; };
 		2291A1BF117EE3FD00854CBE /* c-streetfighter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-streetfighter.c"; sourceTree = "<group>"; };
+		2291A1EC117FF85D00854CBE /* c-frechie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-frechie.c"; sourceTree = "<group>"; };
 		22F652F5117C679300A3793D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		22F652F6117C6C9500A3793D /* c_link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_link.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +34,7 @@
 				2291A1BD117EE3FD00854CBE /* c-angel.c */,
 				2291A1BE117EE3FD00854CBE /* c-lucifer.c */,
 				2291A1BF117EE3FD00854CBE /* c-streetfighter.c */,
+				2291A1EC117FF85D00854CBE /* c-frechie.c */,
 			);
 			path = agents;
 			sourceTree = "<group>";

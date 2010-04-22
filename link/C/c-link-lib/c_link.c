@@ -14,11 +14,19 @@
 #include <time.h>
 
 /* You don't need to read this file.
-   This merely sets up the I/O for you, so all you have to do is define the bot
-   functions defined in <c_link.h>
+   All you have to do is implement the bot functions defined in <c_link.h>
+   This file sets up the I/O for you, as well as some utility functions and tables. 
  */
 
 char ITEMNAMES[3][MAXITEMLEN] = {"Rock", "Paper", "Scissors"};
+
+/* rock-rock     rock-paper     rock-scissors 
+   paper-rock    paper-paper    paper-scissors
+   scissors-rock scissors-paper scissors-scissors */  
+   
+RESULTTYPE RESULTOF[3][3] = { { tie, lose, win },
+                              { win, tie, lose },
+                              { lose, win, tie } };
 
 
 ITEMTYPE RandomAttack() {
@@ -72,6 +80,8 @@ int main( int argc, char * argv[] ) {
 		// read the next command!
 		scanf( "%s", command );
 	}
+	
+	Cleanup();
 	
 	return 0;
 }

@@ -32,3 +32,9 @@ void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem,
 	
 	return;	/* Ignore whatever just happened. */
 }
+
+/* same for Cleanup() */
+
+void Cleanup() {
+	return;
+}

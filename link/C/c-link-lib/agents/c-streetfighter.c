@@ -17,35 +17,33 @@ ATTACKTYPE Attack( char * foe_name ) {
 	
 	attack.realAttack =  RandomAttack();
 	
-	/* Here we choose the thing that will hurt them if they go for a tie */
+	/* Here we choose the thing that will hurt them if they go for the kill */
 	switch (attack.realAttack) {
 		case rock:
 			result.promisedAttack = paper;
 			break;
 		case paper:
-			result.promisedAttack = rock;
+			result.promisedAttack = scissors;
 			break;
 		default: /* attack = scissors */
-			result.promisedAttack = paper;
+			result.promisedAttack = rock;
 			break;
 	}
-	attack.promisedAttack = result.realAttack;	/* Tells the truth for its bluff */
-	
 	return attack;
 }
 
-/* Here we trust that they are telling the truth. And we try to kill them. */
+/* Here we assume they are lying, trying to kill us. And we try to kill them. */
 ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 	ITEMTYPE defence;
 	switch (foePromisedAttack) {
 		case rock:
-			defence = paper;
-			break;
-		case paper:
 			defence = scissors;
 			break;
-		default:
+		case paper:
 			defence = rock;
+			break;
+		default:
+			defence = paper;
 			break;
 	}
 }
@@ -56,4 +54,10 @@ void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem,
 			 ITEMTYPE theirItem, ITEMTYPE promisedItem) {
 	
 	return;	/* Ignore whatever just happened. */
+}
+
+/* same for Cleanup() */
+
+void Cleanup() {
+	return;
 }

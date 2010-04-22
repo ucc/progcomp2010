@@ -7,6 +7,8 @@
  *
  */
 
+#include <stdio.h>
+
 #define MAXCOMMANDLEN	15
 #define MAXFOENAMELEN	50
 #define MAXITEMLEN		10
@@ -16,6 +18,9 @@
 
 /* The type of item used in an attack or defence */
 typedef enum {rock, paper, scissors} ITEMTYPE;
+
+/* A result of a battle */
+typedef enum {win, lose, tie} RESULTTYPE;
 
 
 /* An attack, consisting of the real attack and the attack promised */
@@ -28,6 +33,13 @@ typedef struct {
 /********** Utility Function definitions **********/
 /* These are implemented in c-link.c, and automagically linked in */
 
+/* prints a debug message. Same arguments as printf().
+   (you can't use printf because it is used to talk between
+    the agent and supervisor) 
+ */
+
+#define debugmsg(x...) sprintf(stderr, x)
+
 /* Returns a random item */
 
 ITEMTYPE RandomAttack();
@@ -36,6 +48,10 @@ ITEMTYPE RandomAttack();
    eg printf( "I use %s.\n", ITEMNAMES[rock] ); */
 
 extern char ITEMNAMES[3][MAXITEMLEN];
+
+/* Another useful table - what's the result of the 
+   first item vs the second item? */
+extern RESULTTYPE RESULTOF[3][3];
 
 /********** Bot Function definitions **********/
 /* You need to provide implementations for these to create a bot */
@@ -71,3 +87,11 @@ ATTACKTYPE Attack( char * foeName );
  */
 void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem, 
 			  ITEMTYPE theirItem, ITEMTYPE promisedItem);
+
+/* Cleanup();
+
+   Called when your agent is no longer needed, either due to the round ending
+   or due to your agent being eliminated.
+
+ */
+void Cleanup();
