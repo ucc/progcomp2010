@@ -12,6 +12,7 @@
 		2291A1BE117EE3FD00854CBE /* c-lucifer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-lucifer.c"; sourceTree = "<group>"; };
 		2291A1BF117EE3FD00854CBE /* c-streetfighter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-streetfighter.c"; sourceTree = "<group>"; };
 		2291A1EC117FF85D00854CBE /* c-frechie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "c-frechie.c"; sourceTree = "<group>"; };
+		22C9FA0A118EE5ED003CF235 /* SampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SampleAgents.py; sourceTree = "<group>"; };
 		22F652F5117C679300A3793D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		22F652F6117C6C9500A3793D /* c_link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_link.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -20,6 +21,7 @@
 		08FB7794FE84155DC02AAC07 /* c-link-lib */ = {
 			isa = PBXGroup;
 			children = (
+				22C9FA0A118EE5ED003CF235 /* SampleAgents.py */,
 				2291A1BC117EE3FD00854CBE /* agents */,
 				22F652F6117C6C9500A3793D /* c_link.h */,
 				2291A1BB117EDB9600854CBE /* c_link.c */,

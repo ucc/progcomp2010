@@ -6,9 +6,10 @@ Licensed under an MIT-style license: see the LICENSE file for details.
 '''
 
 # Import and add your agents here:
-from djaAgents import BOFH
+from link.cangel import CAngel
+
 from SampleAgents import Angel, Lucifer, Dummy, Frenchie, Streetfighter
-Agents = [Angel, Lucifer, Frenchie, Streetfighter, BOFH]
+Agents = [Lucifer, Frenchie, Streetfighter, CAngel]
 
 ####################################
 # Developers only past this point! #

@@ -3,6 +3,7 @@ build/
 *.pbxuser
 *.mode1v3
 
+# gcc noise
 *.o
 *.a
 
@@ -12,3 +13,6 @@ build/
 # osx noise
 .DS_Store
 profile
+
+# python noise
+*.pyc
