@@ -1,6 +1,0 @@
- - number of agents can spiral out of control very quickly, e.g. if Frenchie and Angel start duking it out. 
- - points table doesn't agree with technicalities doc
- - agents die after MAX_AGE fights, not MAX_AGE rounds
- - code seems to trust y ou not to mnokey around with your stats...?
- - no way to tell an external agent that their services are no longer required.
-  * amend to provide a BYE command
