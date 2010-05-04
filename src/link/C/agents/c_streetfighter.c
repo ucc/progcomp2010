@@ -1,5 +1,5 @@
 /*
- *  c-lucifer.c
+ *  c_streetfighter.c
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 20/04/10.
@@ -10,45 +10,43 @@
 
 #include <c_link.h>
 
-/* Implement the lucifer bot, which always lies expecting people to be good
-   and always goes for the kill */
+/* Implement the streetfighter bot, which thinks everyone has it in for him. */
 
 ATTACKTYPE Attack( char * foe_name ) {
 	ATTACKTYPE attack;
 	
 	attack.realAttack =  RandomAttack();
 	
-	/* Here we choose the thing that will hurt them if they go for a tie */
+	/* Here we choose the thing that will hurt them if they go for the kill */
 	switch (attack.realAttack) {
 		case rock:
-			result.promisedAttack = scissors;
+			attack.promisedAttack = paper;
 			break;
 		case paper:
-			result.promisedAttack = rock;
+			attack.promisedAttack = scissors;
 			break;
 		default: /* attack = scissors */
-			result.promisedAttack = paper;
+			attack.promisedAttack = rock;
 			break;
 	}
-	attack.promisedAttack = result.realAttack;	/* Tells the truth for its bluff */
-	
 	return attack;
 }
 
-/* Here we trust that they are telling the truth. And we try to kill them. */
+/* Here we assume they are lying, trying to kill us. And we try to kill them. */
 ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 	ITEMTYPE defence;
 	switch (foePromisedAttack) {
 		case rock:
-			defence = paper;
-			break;
-		case paper:
 			defence = scissors;
 			break;
-		default:
+		case paper:
 			defence = rock;
 			break;
+		default:
+			defence = paper;
+			break;
 	}
+    return defence;
 }
 
 /* You need to define a results function, even if it isn't used

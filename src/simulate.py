@@ -6,10 +6,10 @@ Licensed under an MIT-style license: see the LICENSE file for details.
 '''
 
 # Import and add your agents here:
-from link.cangel import CAngel
+from link.C.c_agents import c_angel, c_lucifer, c_streetfighter, c_frenchie
 
 from SampleAgents import Angel, Lucifer, Dummy, Frenchie, Streetfighter
-Agents = [Lucifer, Frenchie, Streetfighter, CAngel]
+Agents = [c_lucifer, Frenchie, c_streetfighter, c_angel]
 
 ####################################
 # Developers only past this point! #

@@ -16,9 +16,9 @@ all: $(LINKSRCS) $(LINKLIB) $(AGENTS)
 $(LINKLIB): $(LINKOBJS)
 	$(AR) rcs $(LINKLIB) $(LINKOBJS)
 	
-$(AGENTS): $(AGENTSRCS) 
-	@echo Building $<
-	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@
+$(AGENTS): $(AGENTSRCS) $(LINKLIB)
+	@echo Building $@
+	$(CC) $(CFLAGS) $(LDFLAGS) $@.c -o $@
 
 .c.o: c_link.h
 	$(CC) -c $(CFLAGS) $< -o $@

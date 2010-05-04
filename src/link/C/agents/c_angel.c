@@ -1,5 +1,5 @@
 /*
- *  c-angel.c
+ *  c_angel.c
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 20/04/10.

@@ -1,5 +1,5 @@
 /*
- *  c-streetfighter.c
+ *  c_lucifer.c
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 20/04/10.
@@ -10,42 +10,46 @@
 
 #include <c_link.h>
 
-/* Implement the streetfighter bot, which thinks everyone has it in for him. */
+/* Implement the lucifer bot, which always lies expecting people to be good
+   and always goes for the kill */
 
 ATTACKTYPE Attack( char * foe_name ) {
 	ATTACKTYPE attack;
 	
 	attack.realAttack =  RandomAttack();
 	
-	/* Here we choose the thing that will hurt them if they go for the kill */
+	/* Here we choose the thing that will hurt them if they go for a tie */
 	switch (attack.realAttack) {
 		case rock:
-			result.promisedAttack = paper;
+			attack.promisedAttack = scissors;
 			break;
 		case paper:
-			result.promisedAttack = scissors;
+			attack.promisedAttack = rock;
 			break;
 		default: /* attack = scissors */
-			result.promisedAttack = rock;
+			attack.promisedAttack = paper;
 			break;
 	}
+	attack.promisedAttack = attack.realAttack;	/* Tells the truth for its bluff */
+	
 	return attack;
 }
 
-/* Here we assume they are lying, trying to kill us. And we try to kill them. */
+/* Here we trust that they are telling the truth. And we try to kill them. */
 ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 	ITEMTYPE defence;
 	switch (foePromisedAttack) {
 		case rock:
-			defence = scissors;
-			break;
-		case paper:
-			defence = rock;
-			break;
-		default:
 			defence = paper;
 			break;
+		case paper:
+			defence = scissors;
+			break;
+		default:
+			defence = rock;
+			break;
 	}
+    return defence;
 }
 
 /* You need to define a results function, even if it isn't used

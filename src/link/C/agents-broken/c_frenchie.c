@@ -1,5 +1,5 @@
 /*
- *  c-frechie.c
+ *  c_frechie.c
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 22/04/10.
@@ -30,8 +30,8 @@
 #define NUMBEROFAGENTSGUESS 100
 
 /* The name of the n-th foe we've seen, as well as a 0/1 have we lost to them */
-char foesNames[][MAXFOENAMELEN] = NULL;
-int haveLostToFoe[] = NULL;
+char foesNames[][MAXFOENAMELEN];
+int haveLostToFoe[];
 
 /* The length of the array, and how far we are along it */
 size_t foesLen = 0;
@@ -46,13 +46,13 @@ ATTACKTYPE Attack( char * foe_name ) {
 	/* Here we choose the thing that will hurt them if they go for the kill */
 	switch (attack.realAttack) {
 		case rock:
-			result.promisedAttack = paper;
+			attack.promisedAttack = paper;
 			break;
 		case paper:
-			result.promisedAttack = scissors;
+			attack.promisedAttack = scissors;
 			break;
 		default: /* attack = scissors */
-			result.promisedAttack = rock;
+			attack.promisedAttack = rock;
 			break;
 	}
 	return attack;
@@ -72,6 +72,7 @@ ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 			defence = paper;
 			break;
 	}
+    return defence;
 }
 
 /* This is so much less fun in C */
