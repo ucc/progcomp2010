@@ -6,16 +6,21 @@ Licensed under an MIT-style license: see the LICENSE file for details.
 
 from uccProgComp import BaseAgent, LearningAgent, RandomAttack
 from rpsconst import *
-from pexpect import pexpect
+#from pexpect import pexpect
+
+import sys, subprocess
 
 class externAgent (BaseAgent):
-    
+
     def __init__ (self, externName):
         BaseAgent.__init__(self)
-        self.process = pexpect.spawn(externName)
-        self.process.delaybeforesend=0
-        
-        
+        try:
+            self.process = subprocess.Popen(externName, stdin=subprocess.PIPE, 
+                                            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                            universal_newlines=True)
+        except Exception, e:
+            print ("Error spawning \"%s\": " % externName), e
+            
     def stringToItem( self, str ):
         if str == "Rock":
             return Rock
@@ -26,33 +31,92 @@ class externAgent (BaseAgent):
         else:
             # Something has gone wrong!
             print "Error: tried to convert \"%s\" into an item!" % str
+            raise ValueError( "tried to convert \"%s\" into an item!" % str );
             return None
 
     def itemToString( self, item ):
-        if item == Rock:
-            return "Rock"
-        elif item == Paper:
-            return "Paper"
-        elif item == Scissors:
-            return "Scissors"
-        else:
-            # Something has gone wrong!
-            print "Error: tried to convert '%d' to Rock/Paper/Scissors string!" % item
+        return rpsStrings[item]
+        
+        #if item == Rock:
+        #    return "Rock"
+        #elif item == Paper:
+        #    return "Paper"
+        #elif item == Scissors:
+        #    return "Scissors"
+        #else:
+        #    # Something has gone wrong!
+        #    print "Error: tried to convert '%d' to Rock/Paper/Scissors string!" % item
+        #    # raise an exception
+        #    raise ValueError("tried to convert '%d' to Rock/Paper/Scissors string!" % item)
+        
+    def resultToString( self, result ):
+        return adtStrings[result]
+    
+        #if result == Attacker:
+        #    return "Attacker"
+        #elif result == Defender:
+        #    return "Defender"
+        #elif result == Tie:
+        #    return "Tie"
+        #else:
+        #    # Something has gone wrong!
+        #    print "Error: tried to convert '%d' to Attacker/Defender/Tie string!" % result
+        #    # raise an exception
+        #    raise ValueError("tried to convert '%d' to Attacker/Defender/Tie string!" % result)
         
     def Attack (self, foe):
-        self.process.sendline( "ATTACK %s" % foe )
-        self.process.expect( "ATTACKING (.+) (.+)\r\n" )
-        attack, bluff = self.process.match.groups()
-        attack, bluff = attack.strip(), bluff.strip()
-        return self.stringToItem(attack), self.stringToItem(bluff)
+        self.process.stdin.write ( ' '.join( ["ATTACK", repr(foe), "\r\n"] ) )
+        #print >>sys.stderr, self.process.stderr.readlines()
+        result = self.process.stdout.readline().split()
+        try:
+            attack, bluff = self.stringToItem( result[1] ), self.stringToItem( result[2] )
+            return attack, bluff
+        except:
+            #agent is insane
+            print "Agent is insane:", self
+            pass
         
-    def Defend( self, foe, bluff ):
-        #print "DEFEND %s %s" % (foe, self.itemToString(bluff))
-        self.process.sendline( "DEFEND %s %s" % (foe, self.itemToString(bluff) ) )
-        self.process.expect( "DEFENDING (.+)\r\n" )
-        #print '------------------ ', self.process.match.groups()[0].strip()
-        defence = self.process.match.groups()[0].strip()
-        return self.stringToItem(defence)
+    def Defend (self, foe, bluff ):
+        self.process.stdin.write ( ' '.join( ["DEFEND", repr(foe), self.itemToString( bluff ), "\r\n"] ) )
+        #print >>sys.stderr, self.process.stderr.readlines()
+        result = self.process.stdout.readline().split()
+        try:
+            defence = self.stringToItem( result[1] )
+            return defence
+        except:
+            #agent is insane
+            print "Agent is insane:", self
+            pass
+
+    def Results (self, foe, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta):
+        
+        BaseAgent.Results (self, foe, isInstigatedByYou, winner, attItem, 
+                           defItem, bluffItem, pointDelta)
+        
+        string = ' '.join( [ "RESULTS", repr(foe), repr(isInstigatedByYou), 
+                             self.resultToString(winner), 
+                             self.itemToString( attItem ), 
+                             self.itemToString( defItem ),
+                             self.itemToString( bluffItem ), repr(pointDelta),
+                             "\r\n" ] )
+        
+        #string = "RESULTS %s %s %s %s %s %s %d\r\n" % (foe, isInstigatedByYou, 
+        #                     self.resultToString(winner), 
+        #                     self.itemToString( attItem ), 
+        #                     self.itemToString( defItem ),
+        #                     self.itemToString( bluffItem ), pointDelta)
+        #print string
+        
+        self.process.stdin.write ( string )
+        self.process.stdout.readline() # read and discard (should be "OK")
         
     def __del__(self):
-        self.process.close(True)
+        try:
+            self.process.communicate( "BYE\r\n" )
+        except Exception, e:
+            print "Error in BYE:", self, ":", e
+            
+        try:
+            self.process.kill()
+        except:
+            None

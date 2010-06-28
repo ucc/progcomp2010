@@ -7,9 +7,15 @@ Licensed under an MIT-style license: see the LICENSE file for details.
 Rock = 0
 Paper = 1
 Scissors = 2
+
+rpsStrings=["Rock","Paper","Scissors"]
+
 Attacker = 0
 Defender = 1
 Tie = 2
+
+adtStrings=["Attacker","Defender","Tie"]
+
 Bluff = 0
 Truth = 1
 Win = 3

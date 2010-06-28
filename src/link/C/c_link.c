@@ -24,9 +24,9 @@ char ITEMNAMES[3][MAXITEMLEN] = {"Rock", "Paper", "Scissors"};
    paper-rock    paper-paper    paper-scissors
    scissors-rock scissors-paper scissors-scissors */  
    
-RESULTTYPE RESULTOF[3][3] = { { tie, lose, win },
-                              { win, tie, lose },
-                              { lose, win, tie } };
+RESULTTYPE RESULTOF[3][3] = { { tie, defender, attacker },
+                              { attacker, tie, defender },
+                              { defender, attacker, tie } };
 
 
 ITEMTYPE RandomAttack() {
@@ -44,13 +44,24 @@ ITEMTYPE stringToItem( char * str ) {
 }
 	
 
+RESULTTYPE stringToResult( char * str ) {
+    if (strcasecmp( str, "Attacker" ) == 0) return attacker;
+    if (strcasecmp( str, "Defender" ) == 0) return defender;
+    if (strcasecmp( str, "Tie" ) == 0) return tie;
+    /* If we reach this point, we've got real problems. */
+	fprintf( stderr, "Attempt to convert invalid string \"%s\" into an ITEMTYPE! Aborting.\n", str );
+	exit(EXIT_FAILURE);
+	return -1;
+}
+
 int main( int argc, char * argv[] ) {
 	srand( time( NULL ) );
 	
 	char command[MAXCOMMANDLEN];
 	char foeName[MAXFOENAMELEN];
-	char yourItem[MAXITEMLEN], theirItem[MAXITEMLEN], promisedItem[MAXITEMLEN];
-	char didYouInstigate[MAXBOOLLEN], childSpawned[MAXBOOLLEN];
+	char attItem[MAXITEMLEN], defItem[MAXITEMLEN], bluffItem[MAXITEMLEN];
+	char didYouInstigate[MAXBOOLLEN];
+    char winner[MAXRESULTLEN];
 	int pointChange;
 	
 	ATTACKTYPE attack;
@@ -71,17 +82,21 @@ int main( int argc, char * argv[] ) {
 			printf("ATTACKING %s %s\n", ITEMNAMES[attack.realAttack], ITEMNAMES[attack.promisedAttack]);
 		
 		} else if (strcasecmp("DEFEND", command) == 0) {
-			scanf( "%s %s", foeName, promisedItem );
-			defence = Defend(foeName, stringToItem(promisedItem));
+			scanf( "%s %s", foeName, bluffItem );
+			defence = Defend(foeName, stringToItem(bluffItem));
 			printf("DEFENDING %s\n", ITEMNAMES[defence]);
 		
 		} else if (strcasecmp("RESULTS", command) == 0) {
-			scanf( "%s %s %s %s %s %d %s", foeName, didYouInstigate, yourItem, theirItem, promisedItem, &pointChange, childSpawned );
-			Results(foeName, (strcasecmp("False",didYouInstigate)==0),
-					stringToItem(yourItem), stringToItem(theirItem), stringToItem(promisedItem));
+            /* (foeName, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta) */
+			scanf( "%s %s %s %s %s %s %d", foeName, didYouInstigate, winner, attItem, defItem, bluffItem, &pointChange );
+			Results(foeName, (strcasecmp("True",didYouInstigate)==0), stringToResult(winner),
+					stringToItem(attItem), stringToItem(defItem), stringToItem(bluffItem), pointChange);
 			printf("OK\n");
 		}
 	
+        fflush(stdout);
+        fflush(stderr);
+        
 		// read the next command!
 		scanf( "%s", command );
 	}

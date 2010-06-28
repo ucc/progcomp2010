@@ -53,8 +53,9 @@ ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 
 /* You need to define a results function, even if it isn't used
  (otherwise the linker will complain) */
-void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem, 
-			 ITEMTYPE theirItem, ITEMTYPE promisedItem) {
+void Results( char * foeName, int isInstigatedByYou, RESULTTYPE winner,
+             ITEMTYPE attItem, ITEMTYPE defItem, ITEMTYPE bluffItem,
+             int pointDelta ) {
 	
 	return;	/* Ignore whatever just happened. */
 }

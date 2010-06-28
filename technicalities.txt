@@ -19,7 +19,7 @@ class <AgentName>:
 		return "Rock"				# Not a very good idea, but this is the format you need to use.
 	def Attack (self, foeName):				# Also note that the supervisor doesn't use named arguments.
 		return "Rock", "Paper"			# Real first, then promised. Won't they be surprised!
-	def Results (self, foeName, isInstigatedByYou, yourItem, theirItem, promisedItem):	# The second argument is a boolean.
+	def Results (self, foeName, isInstigatedByYou, winner, yourItem, theirItem, promisedItem, pointChange):	# The second argument is a boolean.
 		pass					# You probably want to store at least some of this information.
 	
 Other Agents:
@@ -44,10 +44,10 @@ Example:
 <DEFENDING Rock
 
 Syntax for collecting results:
->RESULTS foeName didYouInstigate yourItem theirItem promisedItem pointChange childSpawned
+>RESULTS foeName isInstigatedByYou winner yourItem theirItem promisedItem pointChange
 <OK
 Example:
->RESULTS agent00001 False Rock Paper Scissors -2 False
+>RESULTS agent00001 False Attacker Rock Paper Scissors -2
 <OK
 
 Syntax for cleaning up after your bot - either the round has ended, or you've been killed off

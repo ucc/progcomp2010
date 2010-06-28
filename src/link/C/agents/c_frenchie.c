@@ -46,7 +46,7 @@ int haveLostTo( char * foeName ) {
     /* check every foe we know to have defeated us */
     for (foe=0; foe<foesCount; foe++) {
         if (strncmp( defeatingFoes[foe], foeName, MAXFOENAMELEN) == 0) {
-            debugmsg( "%d\thaveLostTo( %s ) -> Yes\n", me, foeName );
+            //debugmsg( "%d\thaveLostTo( %s ) -> Yes\n", me, foeName );
             return 1;
         }
     }
@@ -112,8 +112,9 @@ ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 }
 
 /* This is so much less fun in C */
-void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem, 
-			 ITEMTYPE theirItem, ITEMTYPE promisedItem) {
+void Results( char * foeName, int isInstigatedByYou, RESULTTYPE winner,
+             ITEMTYPE attItem, ITEMTYPE defItem, ITEMTYPE bluffItem,
+             int pointDelta ) {
 	
     int foe;
     
@@ -125,9 +126,11 @@ void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem,
     
     /* figure out if we lost, which is the only thing we care about
        if we didn't, move on. */
-    if (RESULTOF[yourItem][theirItem] != lose) return;
+    if ((winner == tie) || 
+        (winner==attacker && isInstigatedByYou) ||
+        (winner==defender && !isInstigatedByYou) ) return;
     
-    fprintf( stderr, "%d\tsaving loss from %s\n", me, foeName );
+    //fprintf( stderr, "%d\tsaving loss from %s\n", me, foeName );
     
     /* if we've already lost the foe, don't store again */
     for (foe=0; foe<foesCount; foe++) {
@@ -150,7 +153,7 @@ void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem,
     return;
 }
 
-/* same for Cleanup() */
+/* Cleanup() */
 
 void Cleanup() {
 	free(defeatingFoes);

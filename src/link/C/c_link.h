@@ -12,6 +12,7 @@
 #define MAXCOMMANDLEN	15
 #define MAXFOENAMELEN	50
 #define MAXITEMLEN		10
+#define MAXRESULTLEN    10
 #define MAXBOOLLEN		6
 
 /********** Type definitions **********/
@@ -19,8 +20,8 @@
 /* The type of item used in an attack or defence */
 typedef enum {rock, paper, scissors} ITEMTYPE;
 
-/* A result of a battle */
-typedef enum {win, lose, tie} RESULTTYPE;
+/* A result of a battle, in terms of who won */
+typedef enum {attacker, defender, tie} RESULTTYPE;
 
 
 /* An attack, consisting of the real attack and the attack promised */
@@ -54,8 +55,8 @@ ITEMTYPE RandomAttack();
 
 extern char ITEMNAMES[3][MAXITEMLEN];
 
-/* Another useful table - what's the result of the 
-   first item vs the second item? */
+/* Another useful table - who's the victor given an 
+   attacker with first item vs defender with the second item? */
 extern RESULTTYPE RESULTOF[3][3];
 
 /********** Bot Function definitions **********/
@@ -82,16 +83,19 @@ ATTACKTYPE Attack( char * foeName );
 
 /* Results( foeName : string - the name of your foe;
             isInstigatedByYou : 0=you defended/1=you attacked;
-			yourItem : ITEMTYPE - the item you used;
-            theirItem : ITEMTYPE - the item they used;
-            promisedItem : ITEMTYPE - the item that was promised
+            winner : RESULTTYPE - who won
+			attItem : ITEMTYPE - the item used to attack;
+            defItem : ITEMTYPE - the item used to defend;
+            bluffItem : ITEMTYPE - the item that was promised
+            pointDelta : integer - how your points were affected.
           );
 
  Called after your agent battles another agent, to tell you how the battle goes.
  
  */
-void Results( char * foeName, int isInstigatedByYou, ITEMTYPE yourItem, 
-			  ITEMTYPE theirItem, ITEMTYPE promisedItem);
+void Results( char * foeName, int isInstigatedByYou, RESULTTYPE winner,
+              ITEMTYPE attItem, ITEMTYPE defItem, ITEMTYPE bluffItem,
+              int pointDelta );
 
 /* Cleanup();
 
