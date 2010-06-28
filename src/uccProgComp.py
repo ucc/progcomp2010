@@ -10,22 +10,7 @@ import random, uuid
 random.seed ()
 
 from rpsconst import *
-
-DEFAULT_HEALTH = 50
-REPRODUCE_HEALTH = 100
-DIE_HEALTH = 0
-MAX_AGE = 100
-
-DEBUG = True
-
-# Game dynamics - these are not final:
-#		 WINNER		 TRUTH		ATTPoints, DEFPoints
-pointsTable 	[Attacker]	[False] = 	(2, -2)
-pointsTable	[Attacker]	[True]  =	(2, -2)
-pointsTable	[Defender]	[False] =	(-2, 2)
-pointsTable	[Defender]	[True]  =	(-2, 2)
-pointsTable	[Tie]		[False] =	(0, 0)
-pointsTable	[Tie]		[True]  =	(1, 1)
+from conf import *
 
 def Debug (f):
 	def g (*args):
