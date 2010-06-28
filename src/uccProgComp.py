@@ -16,7 +16,7 @@ REPRODUCE_HEALTH = 100
 DIE_HEALTH = 0
 MAX_AGE = 100
 
-DEBUG_MODE = False
+DEBUG = True
 
 # Game dynamics - these are not final:
 #		 WINNER		 TRUTH		ATTPoints, DEFPoints
@@ -29,7 +29,7 @@ pointsTable	[Tie]		[True]  =	(1, 1)
 
 def Debug (f):
 	def g (*args):
-		if DEBUG_MODE:
+		if DEBUG:
 			print f.__name__, args[1].__class__.__name__, args[1].GetID ()
 		return f (*args)
 	return g
@@ -124,6 +124,7 @@ class Supervisor:
 		for Agent in self.agentTypes:
 			for i in range (0,nAgentsPerClass): self.population.append (Agent ())
 			self.agentStats [str(Agent)] = [nAgentsPerClass,0,0]
+			if DEBUG: print "Created " + str(nAgentsPerClass) + " instances of " + Agent.__name__
 
 	def Iterate (self):
 		self.ClearStats ()
