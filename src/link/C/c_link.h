@@ -38,14 +38,19 @@ typedef struct {
     the agent and supervisor) 
  */
 
-#define debugmsg(x...) sprintf(stderr, x)
+#define debugmsg(x...) fprintf(stderr, x)
+
+/* A (hopefully) unique identifier for this particular instance of your agent,
+   to help with debugging */
+int me;
+
 
 /* Returns a random item */
 
 ITEMTYPE RandomAttack();
 
 /* A useful translation table
-   eg printf( "I use %s.\n", ITEMNAMES[rock] ); */
+   eg debugmsg( "I use %s.\n", ITEMNAMES[rock] ); */
 
 extern char ITEMNAMES[3][MAXITEMLEN];
 

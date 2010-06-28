@@ -41,7 +41,7 @@ class externAgent (BaseAgent):
         
     def Attack (self, foe):
         self.process.sendline( "ATTACK %s" % foe )
-        self.process.expect( "ATTACKING (.+) (.+)\n" )
+        self.process.expect( "ATTACKING (.+) (.+)\r\n" )
         attack, bluff = self.process.match.groups()
         attack, bluff = attack.strip(), bluff.strip()
         return self.stringToItem(attack), self.stringToItem(bluff)
@@ -49,8 +49,10 @@ class externAgent (BaseAgent):
     def Defend( self, foe, bluff ):
         #print "DEFEND %s %s" % (foe, self.itemToString(bluff))
         self.process.sendline( "DEFEND %s %s" % (foe, self.itemToString(bluff) ) )
-        self.process.expect( "DEFENDING (.+)" )
+        self.process.expect( "DEFENDING (.+)\r\n" )
         #print '------------------ ', self.process.match.groups()[0].strip()
         defence = self.process.match.groups()[0].strip()
         return self.stringToItem(defence)
         
+    def __del__(self):
+        self.process.close(True)

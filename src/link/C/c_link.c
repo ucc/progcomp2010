@@ -56,6 +56,11 @@ int main( int argc, char * argv[] ) {
 	ATTACKTYPE attack;
 	ITEMTYPE defence;
 	
+    /* generate a random id for this bot. Hopefully it's unique
+       I can't use the UUID, because python doesn't pass it to me! */
+    me = rand();
+    
+    
 	scanf( "%s", command );
 	
 	while (strcasecmp("BYE",command) != 0) {

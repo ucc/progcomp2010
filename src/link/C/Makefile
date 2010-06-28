@@ -1,8 +1,8 @@
 CC=gcc
 AR=ar
 
-CFLAGS=-Wall -I.
-LDFLAGS=-lc_link -L.
+myCFLAGS=$(CFLAGS) -Wall -I.
+myLDFLAGS=-lc_link -L.
 
 LINKSRCS=c_link.c
 LINKOBJS=$(LINKSRCS:.c=.o)
@@ -18,10 +18,10 @@ $(LINKLIB): $(LINKOBJS)
 	
 $(AGENTS): $(AGENTSRCS) $(LINKLIB)
 	@echo Building $@
-	$(CC) $(CFLAGS) $(LDFLAGS) $@.c -o $@
+	$(CC) $(myCFLAGS) $(myLDFLAGS) $@.c -o $@
 
 .c.o: c_link.h
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(myCFLAGS) $< -o $@
 
 .PHONY : clean
 clean:

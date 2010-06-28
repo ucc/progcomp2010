@@ -6,6 +6,7 @@ build/
 # gcc noise
 *.o
 *.a
+*.dSYM
 
 # old skool
 .svn

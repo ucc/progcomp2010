@@ -30,7 +30,6 @@ ATTACKTYPE Attack( char * foe_name ) {
 			attack.promisedAttack = paper;
 			break;
 	}
-	attack.promisedAttack = attack.realAttack;	/* Tells the truth for its bluff */
 	
 	return attack;
 }
