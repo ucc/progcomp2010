@@ -1,11 +1,16 @@
 Welcome to the C SDK and link library.
 
+If you want to enter in C, you've come to the right place.
+
 == Compiling and testing the sample bots ==
 
 Run "make" in this directory. To include them in the 
 
 == Making your own agent ==
 See wiki page.
+
+Also, use the link/bundle-agent.sh shell script - it will take your agent file
+and make a python module that you can include.
 
 = Testing your own agent =
 Edit src/simulate.py.

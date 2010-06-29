@@ -1,20 +1,20 @@
 # add your agents to this file by copying the definition and adjusting
 # you then need to modify simulate.py
 
-from link.externAgent import externAgent
+from link.cAgent import cAgent
 
-class c_angel (externAgent):
+class c_angel (cAgent):
 	def __init__ (self):
-		externAgent.__init__(self, "./link/C/agents/c_angel")
+		cAgent.__init__(self, "./link/C/agents/c_angel")
 
-class c_lucifer (externAgent):
+class c_lucifer (cAgent):
 	def __init__ (self):
-		externAgent.__init__(self, "./link/C/agents/c_lucifer")
+		cAgent.__init__(self, "./link/C/agents/c_lucifer")
 
-class c_streetfighter (externAgent):
+class c_streetfighter (cAgent):
 	def __init__ (self):
-		externAgent.__init__(self, "./link/C/agents/c_streetfighter")
+		cAgent.__init__(self, "./link/C/agents/c_streetfighter")
 
-class c_frenchie (externAgent):
+class c_frenchie (cAgent):
 	def __init__ (self):
-		externAgent.__init__(self, "./link/C/agents/c_frenchie")
+		cAgent.__init__(self, "./link/C/agents/c_frenchie")
