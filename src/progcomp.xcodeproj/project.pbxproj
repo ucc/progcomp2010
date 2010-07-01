@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		228D541011DB3CEB00258478 /* PythonSampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = PythonSampleAgents.py; sourceTree = "<group>"; };
+		228D541311DB443B00258478 /* CSampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = CSampleAgents.py; sourceTree = "<group>"; };
 		22CA010611D9BD51001ECDEF /* bundle-agent.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "bundle-agent.sh"; path = "link/bundle-agent.sh"; sourceTree = "<group>"; };
 		22CA010711D9C52B001ECDEF /* cAgent.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = cAgent.py; path = link/cAgent.py; sourceTree = "<group>"; };
 		22CAFEEA11D84076001ECDEF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -32,8 +34,18 @@
 				22CAFEEE11D84076001ECDEF /* selectAlgorithms.py */,
 				22CAFEEF11D84076001ECDEF /* simulate.py */,
 				22CAFEF011D84076001ECDEF /* uccProgComp.py */,
+				228D540F11DB3CEB00258478 /* arenas */,
 			);
 			name = progcomp;
+			sourceTree = "<group>";
+		};
+		228D540F11DB3CEB00258478 /* arenas */ = {
+			isa = PBXGroup;
+			children = (
+				228D541011DB3CEB00258478 /* PythonSampleAgents.py */,
+				228D541311DB443B00258478 /* CSampleAgents.py */,
+			);
+			path = arenas;
 			sourceTree = "<group>";
 		};
 		22CAFF7711D840CB001ECDEF /* link */ = {

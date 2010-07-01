@@ -6,7 +6,7 @@ from rpsconst import *
 VERBOSE = True
 
 # Enable for even more verbose output.
-DEBUG = True
+DEBUG = False
 
 # How many iterations to run before quitting.
 MAX_ITERATIONS = 150
