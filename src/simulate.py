@@ -5,11 +5,9 @@ Written by Luke Williams <shmookey@ucc.asn.au> for the UCC Programming Competiti
 Licensed under an MIT-style license: see the LICENSE file for details.
 '''
 
-# Import and add your agents here:
-#from link.C.c_agents import c_angel, c_lucifer, c_streetfighter, c_frenchie
-
-from SampleAgents import Angel, Lucifer, Dummy, Frenchie, Streetfighter
-Agents =  [Angel,Lucifer,Streetfighter,Frenchie]
+# this is the default arena. To chose a different one - for example to run your
+# own bots - use -a arenaName on the command line, or change this variable.
+arenaName = "PythonSampleAgents"
 
 ####################################
 # Developers only past this point! #
@@ -45,17 +43,24 @@ for i in range (1,len(sys.argv)):
 		except:
 			print usage
 			sys.exit(1)
-
 	elif sys.argv[i] == "-v":
 		VERBOSE = True
+	elif sys.argv[i] == "-a":
+		arenaName = sys.argv[i+1]
+		i += 1
 
+
+#import the arena - NOTE THAT THIS IS A POTENTIAL SECURITY HOLE,
+# AS INPUT IS NOT SANITY CHECKED!
+importString = "from arenas." + arenaName + " import arena"
+exec importString
 
 iteration = 0
 trial = 0
 winners = {}
 while trial < TRIALS:
 	sup = Supervisor ()
-	for Agent in Agents: sup.RegisterAgent (Agent)
+	for Agent in arena.Agents: sup.RegisterAgent (Agent)
 	sup.GeneratePopulation (STARTING_POPULATION)
 
 	trial += 1

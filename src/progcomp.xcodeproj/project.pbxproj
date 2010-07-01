@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		228D541011DB3CEB00258478 /* PythonSampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = PythonSampleAgents.py; sourceTree = "<group>"; };
+		228D541311DB443B00258478 /* CSampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = CSampleAgents.py; sourceTree = "<group>"; };
+		22CA010611D9BD51001ECDEF /* bundle-agent.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "bundle-agent.sh"; path = "link/bundle-agent.sh"; sourceTree = "<group>"; };
+		22CA010711D9C52B001ECDEF /* cAgent.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = cAgent.py; path = link/cAgent.py; sourceTree = "<group>"; };
 		22CAFEEA11D84076001ECDEF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22CAFEEB11D84076001ECDEF /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		22CAFEEC11D84076001ECDEF /* rpsconst.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = rpsconst.py; sourceTree = "<group>"; };
@@ -16,54 +20,6 @@
 		22CAFEF011D84076001ECDEF /* uccProgComp.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = uccProgComp.py; sourceTree = "<group>"; };
 		22CAFF7B11D840E3001ECDEF /* __init__.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = __init__.py; path = link/__init__.py; sourceTree = "<group>"; };
 		22CAFF7C11D840E3001ECDEF /* externAgent.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = externAgent.py; path = link/externAgent.py; sourceTree = "<group>"; };
-		22CAFF7E11D840E3001ECDEF /* __init__.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
-		22CAFF8011D840E3001ECDEF /* ANSI.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ANSI.py; sourceTree = "<group>"; };
-		22CAFF8211D840E3001ECDEF /* ANSI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ANSI.html; sourceTree = "<group>"; };
-		22CAFF8311D840E3001ECDEF /* clean.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = clean.css; sourceTree = "<group>"; };
-		22CAFF8411D840E3001ECDEF /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
-		22CAFF8511D840E3001ECDEF /* examples.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = examples.html; sourceTree = "<group>"; };
-		22CAFF8611D840E3001ECDEF /* fdpexpect.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = fdpexpect.html; sourceTree = "<group>"; };
-		22CAFF8711D840E3001ECDEF /* FSM.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FSM.html; sourceTree = "<group>"; };
-		22CAFF8811D840E3001ECDEF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		22CAFF8911D840E3001ECDEF /* index.template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.template.html; sourceTree = "<group>"; };
-		22CAFF8A11D840E3001ECDEF /* pexpect.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pexpect.html; sourceTree = "<group>"; };
-		22CAFF8B11D840E3001ECDEF /* pxssh.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pxssh.html; sourceTree = "<group>"; };
-		22CAFF8C11D840E3001ECDEF /* screen.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = screen.html; sourceTree = "<group>"; };
-		22CAFF8E11D840E3001ECDEF /* astat.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = astat.py; sourceTree = "<group>"; };
-		22CAFF8F11D840E3001ECDEF /* bd_client.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = bd_client.py; sourceTree = "<group>"; };
-		22CAFF9011D840E3001ECDEF /* bd_serv.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = bd_serv.py; sourceTree = "<group>"; };
-		22CAFF9111D840E3001ECDEF /* cgishell.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = cgishell.cgi; sourceTree = "<group>"; };
-		22CAFF9211D840E3001ECDEF /* chess.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = chess.py; sourceTree = "<group>"; };
-		22CAFF9311D840E3001ECDEF /* chess2.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = chess2.py; sourceTree = "<group>"; };
-		22CAFF9411D840E3001ECDEF /* chess3.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = chess3.py; sourceTree = "<group>"; };
-		22CAFF9511D840E3001ECDEF /* df.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = df.py; sourceTree = "<group>"; };
-		22CAFF9611D840E3001ECDEF /* fix_cvs_files.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = fix_cvs_files.py; sourceTree = "<group>"; };
-		22CAFF9711D840E3001ECDEF /* ftp.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ftp.py; sourceTree = "<group>"; };
-		22CAFF9811D840E3001ECDEF /* hive.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = hive.py; sourceTree = "<group>"; };
-		22CAFF9911D840E3001ECDEF /* log_69.80.212.10 */ = {isa = PBXFileReference; lastKnownFileType = file; path = log_69.80.212.10; sourceTree = "<group>"; };
-		22CAFF9A11D840E3001ECDEF /* log_69.80.212.11 */ = {isa = PBXFileReference; lastKnownFileType = file; path = log_69.80.212.11; sourceTree = "<group>"; };
-		22CAFF9B11D840E3001ECDEF /* monitor.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = monitor.py; sourceTree = "<group>"; };
-		22CAFF9C11D840E3001ECDEF /* passmass.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = passmass.py; sourceTree = "<group>"; };
-		22CAFF9D11D840E3001ECDEF /* python.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = python.py; sourceTree = "<group>"; };
-		22CAFF9E11D840E3001ECDEF /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		22CAFF9F11D840E3001ECDEF /* rippy.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = rippy.py; sourceTree = "<group>"; };
-		22CAFFA011D840E3001ECDEF /* script.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = script.py; sourceTree = "<group>"; };
-		22CAFFA111D840E3001ECDEF /* ssh_session.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ssh_session.py; sourceTree = "<group>"; };
-		22CAFFA211D840E3001ECDEF /* ssh_tunnel.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ssh_tunnel.py; sourceTree = "<group>"; };
-		22CAFFA311D840E3001ECDEF /* sshls.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sshls.py; sourceTree = "<group>"; };
-		22CAFFA411D840E3001ECDEF /* table_test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = table_test.html; sourceTree = "<group>"; };
-		22CAFFA511D840E3001ECDEF /* topip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = topip.py; sourceTree = "<group>"; };
-		22CAFFA611D840E3001ECDEF /* uptime.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = uptime.py; sourceTree = "<group>"; };
-		22CAFFA711D840E3001ECDEF /* fdpexpect.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = fdpexpect.py; sourceTree = "<group>"; };
-		22CAFFA811D840E3001ECDEF /* FSM.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = FSM.py; sourceTree = "<group>"; };
-		22CAFFA911D840E3001ECDEF /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = INSTALL; sourceTree = "<group>"; };
-		22CAFFAA11D840E3001ECDEF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		22CAFFAB11D840E3001ECDEF /* pexpect.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pexpect.py; sourceTree = "<group>"; };
-		22CAFFAD11D840E3001ECDEF /* PKG-INFO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PKG-INFO"; sourceTree = "<group>"; };
-		22CAFFAE11D840E3001ECDEF /* pxssh.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pxssh.py; sourceTree = "<group>"; };
-		22CAFFAF11D840E3001ECDEF /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		22CAFFB011D840E3001ECDEF /* screen.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = screen.py; sourceTree = "<group>"; };
-		22CAFFB111D840E3001ECDEF /* setup.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = setup.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -78,90 +34,29 @@
 				22CAFEEE11D84076001ECDEF /* selectAlgorithms.py */,
 				22CAFEEF11D84076001ECDEF /* simulate.py */,
 				22CAFEF011D84076001ECDEF /* uccProgComp.py */,
+				228D540F11DB3CEB00258478 /* arenas */,
 			);
 			name = progcomp;
+			sourceTree = "<group>";
+		};
+		228D540F11DB3CEB00258478 /* arenas */ = {
+			isa = PBXGroup;
+			children = (
+				228D541011DB3CEB00258478 /* PythonSampleAgents.py */,
+				228D541311DB443B00258478 /* CSampleAgents.py */,
+			);
+			path = arenas;
 			sourceTree = "<group>";
 		};
 		22CAFF7711D840CB001ECDEF /* link */ = {
 			isa = PBXGroup;
 			children = (
+				22CA010711D9C52B001ECDEF /* cAgent.py */,
 				22CAFF7B11D840E3001ECDEF /* __init__.py */,
 				22CAFF7C11D840E3001ECDEF /* externAgent.py */,
-				22CAFF7D11D840E3001ECDEF /* pexpect */,
+				22CA010611D9BD51001ECDEF /* bundle-agent.sh */,
 			);
 			name = link;
-			sourceTree = "<group>";
-		};
-		22CAFF7D11D840E3001ECDEF /* pexpect */ = {
-			isa = PBXGroup;
-			children = (
-				22CAFF7E11D840E3001ECDEF /* __init__.py */,
-				22CAFF8011D840E3001ECDEF /* ANSI.py */,
-				22CAFF8111D840E3001ECDEF /* doc */,
-				22CAFF8D11D840E3001ECDEF /* examples */,
-				22CAFFA711D840E3001ECDEF /* fdpexpect.py */,
-				22CAFFA811D840E3001ECDEF /* FSM.py */,
-				22CAFFA911D840E3001ECDEF /* INSTALL */,
-				22CAFFAA11D840E3001ECDEF /* LICENSE */,
-				22CAFFAB11D840E3001ECDEF /* pexpect.py */,
-				22CAFFAD11D840E3001ECDEF /* PKG-INFO */,
-				22CAFFAE11D840E3001ECDEF /* pxssh.py */,
-				22CAFFAF11D840E3001ECDEF /* README */,
-				22CAFFB011D840E3001ECDEF /* screen.py */,
-				22CAFFB111D840E3001ECDEF /* setup.py */,
-			);
-			name = pexpect;
-			path = link/pexpect;
-			sourceTree = "<group>";
-		};
-		22CAFF8111D840E3001ECDEF /* doc */ = {
-			isa = PBXGroup;
-			children = (
-				22CAFF8211D840E3001ECDEF /* ANSI.html */,
-				22CAFF8311D840E3001ECDEF /* clean.css */,
-				22CAFF8411D840E3001ECDEF /* email.png */,
-				22CAFF8511D840E3001ECDEF /* examples.html */,
-				22CAFF8611D840E3001ECDEF /* fdpexpect.html */,
-				22CAFF8711D840E3001ECDEF /* FSM.html */,
-				22CAFF8811D840E3001ECDEF /* index.html */,
-				22CAFF8911D840E3001ECDEF /* index.template.html */,
-				22CAFF8A11D840E3001ECDEF /* pexpect.html */,
-				22CAFF8B11D840E3001ECDEF /* pxssh.html */,
-				22CAFF8C11D840E3001ECDEF /* screen.html */,
-			);
-			path = doc;
-			sourceTree = "<group>";
-		};
-		22CAFF8D11D840E3001ECDEF /* examples */ = {
-			isa = PBXGroup;
-			children = (
-				22CAFF8E11D840E3001ECDEF /* astat.py */,
-				22CAFF8F11D840E3001ECDEF /* bd_client.py */,
-				22CAFF9011D840E3001ECDEF /* bd_serv.py */,
-				22CAFF9111D840E3001ECDEF /* cgishell.cgi */,
-				22CAFF9211D840E3001ECDEF /* chess.py */,
-				22CAFF9311D840E3001ECDEF /* chess2.py */,
-				22CAFF9411D840E3001ECDEF /* chess3.py */,
-				22CAFF9511D840E3001ECDEF /* df.py */,
-				22CAFF9611D840E3001ECDEF /* fix_cvs_files.py */,
-				22CAFF9711D840E3001ECDEF /* ftp.py */,
-				22CAFF9811D840E3001ECDEF /* hive.py */,
-				22CAFF9911D840E3001ECDEF /* log_69.80.212.10 */,
-				22CAFF9A11D840E3001ECDEF /* log_69.80.212.11 */,
-				22CAFF9B11D840E3001ECDEF /* monitor.py */,
-				22CAFF9C11D840E3001ECDEF /* passmass.py */,
-				22CAFF9D11D840E3001ECDEF /* python.py */,
-				22CAFF9E11D840E3001ECDEF /* README */,
-				22CAFF9F11D840E3001ECDEF /* rippy.py */,
-				22CAFFA011D840E3001ECDEF /* script.py */,
-				22CAFFA111D840E3001ECDEF /* ssh_session.py */,
-				22CAFFA211D840E3001ECDEF /* ssh_tunnel.py */,
-				22CAFFA311D840E3001ECDEF /* sshls.py */,
-				22CAFFA411D840E3001ECDEF /* table_test.html */,
-				22CAFFA511D840E3001ECDEF /* topip.py */,
-				22CAFFA611D840E3001ECDEF /* uptime.py */,
-			);
-			path = examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
