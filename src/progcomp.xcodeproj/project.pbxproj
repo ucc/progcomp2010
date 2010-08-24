@@ -20,6 +20,7 @@
 		22CAFEF011D84076001ECDEF /* uccProgComp.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = uccProgComp.py; sourceTree = "<group>"; };
 		22CAFF7B11D840E3001ECDEF /* __init__.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = __init__.py; path = link/__init__.py; sourceTree = "<group>"; };
 		22CAFF7C11D840E3001ECDEF /* externAgent.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = externAgent.py; path = link/externAgent.py; sourceTree = "<group>"; };
+		22DB7DF31223BAF700E04CAB /* conf.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = conf.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -31,6 +32,7 @@
 				22CAFEEB11D84076001ECDEF /* README */,
 				22CAFEEC11D84076001ECDEF /* rpsconst.py */,
 				22CAFEED11D84076001ECDEF /* SampleAgents.py */,
+				22DB7DF31223BAF700E04CAB /* conf.py */,
 				22CAFEEE11D84076001ECDEF /* selectAlgorithms.py */,
 				22CAFEEF11D84076001ECDEF /* simulate.py */,
 				22CAFEF011D84076001ECDEF /* uccProgComp.py */,

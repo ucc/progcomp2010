@@ -21,7 +21,7 @@ usage = "Usage: rps [-v] [-i iterations=150] [-n starting_populations=10] [-t tr
 for i in range (1,len(sys.argv)):
 	if sys.argv[i] == "-i":
 		try:
-			maxIterations = int(sys.argv[i+1])
+			MAX_ITERATIONS = int(sys.argv[i+1])
 			i += 1
 			continue
 		except:
@@ -37,7 +37,7 @@ for i in range (1,len(sys.argv)):
 			sys.exit(1)
 	elif sys.argv[i] == "-t":
 		try:
-			trials = int(sys.argv[i+1])
+			TRIALS = int(sys.argv[i+1])
 			i += 1
 			continue
 		except:
@@ -81,7 +81,7 @@ while trial < TRIALS:
 	else: winners[winner[0]] = 1
 	#print "Winner: %s" % winner[0]
 
-print "SCOREBOARD OVER %d TRIALS OF %d ROUNDS EACH" % (trials, maxIterations)
+print "SCOREBOARD OVER %d TRIALS OF %d ROUNDS EACH" % (TRIALS, MAX_ITERATIONS)
 rawscoreboard = sorted ( [(score,player) for (player,score) in winners.items ()] , reverse=True )
 scoreboard = []
 for score, player in rawscoreboard:
