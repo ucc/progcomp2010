@@ -15,6 +15,6 @@ class c_streetfighter (cAgent):
 	def __init__ (self):
 		cAgent.__init__(self, "./link/C/agents/c_streetfighter")
 
-class c_frenchie (cAgent):
+class c_wash (cAgent):
 	def __init__ (self):
-		cAgent.__init__(self, "./link/C/agents/c_frenchie")
+		cAgent.__init__(self, "./link/C/agents/c_wash")

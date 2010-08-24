@@ -5,7 +5,7 @@ Written by Daniel Axtens <dja@ucc.asn.au> for the UCC Programming Competition in
 Licensed under an MIT-style license: see the LICENSE file for details.
 '''
 
-from link.C.c_agents import c_angel, c_lucifer, c_streetfighter, c_frenchie
+from link.C.c_agents import c_angel, c_lucifer, c_streetfighter, c_wash
 
 class arena:
-	Agents =  [c_angel,c_lucifer,c_streetfighter,c_frenchie]
+	Agents =  [c_angel,c_lucifer,c_streetfighter,c_wash]

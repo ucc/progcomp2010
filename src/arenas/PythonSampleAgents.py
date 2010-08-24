@@ -6,9 +6,9 @@ Written by Daniel Axtens <dja@ucc.asn.au> for the UCC Programming Competition in
 Licensed under an MIT-style license: see the LICENSE file for details.
 '''
 
-from SampleAgents import Angel, Lucifer, Dummy, Frenchie, Streetfighter
+from SampleAgents import Angel, Lucifer, Dummy, Wash, Streetfighter
 
 
 # Import and add your agents here:
 class arena:
-    Agents =  [Angel,Lucifer,Streetfighter,Frenchie]
+    Agents =  [Angel,Lucifer,Streetfighter,Wash]

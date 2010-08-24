@@ -18,12 +18,12 @@ Your agents live in link.C.c_agents
 Add them to Agents to get them to do battle.
 
 For example, this code imports c_angel, c_lucifer, c_streetfighter and
-c_frenchie, as well as the python sample agents, and then battles c_lucifer, 
-python Frenchie, c_streetfighter and c_angel. It goes at the top of simulate.py.
+c_wash, as well as the python sample agents, and then battles c_lucifer, 
+python Wash, c_streetfighter and c_angel. It goes at the top of simulate.py.
 
 # Import and add your agents here:
-from link.C.c_agents import c_angel, c_lucifer, c_streetfighter, c_frenchie
+from link.C.c_agents import c_angel, c_lucifer, c_streetfighter, c_wash
 
-from SampleAgents import Angel, Lucifer, Dummy, Frenchie, Streetfighter
-Agents = [c_lucifer, Frenchie, c_streetfighter, c_angel]
+from SampleAgents import Angel, Lucifer, Dummy, Wash, Streetfighter
+Agents = [c_lucifer, Wash, c_streetfighter, c_angel]
 

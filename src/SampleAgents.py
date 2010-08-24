@@ -56,8 +56,9 @@ class Streetfighter (BaseAgent):
 
 # This is our first bot with any sort of learning capability, based on the LearningAgent base.
 # Experienced programmers might opt to write their own learning code based on BaseAgent, but it's up to you.
-# Frenchie is a simple bot that is by default nice but will permanently turn against any agent that betrays it.
-class Frenchie (LearningAgent):
+# Wash is a simple bot that is by default nice but will permanently turn against any agent that betrays it.
+# "Curse your suddent but inevitable betrayal" - Wash (Firefly)
+class Wash (LearningAgent):
 	def Attack (self, foe):
 		attack = RandomAttack ()
 		if Loss in LearningAgent.GetWinHistory (self, foe):

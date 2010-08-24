@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		2208AFE6118F28D800770C92 /* c_frenchie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = c_frenchie.c; sourceTree = "<group>"; };
+		2208AFE6118F28D800770C92 /* c_wash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = c_wash.c; sourceTree = "<group>"; };
 		2208AFE7118F28F400770C92 /* c_agents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = c_agents.py; sourceTree = "<group>"; };
 		2291A1BB117EDB9600854CBE /* c_link.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = c_link.c; sourceTree = "<group>"; };
 		2291A1BD117EE3FD00854CBE /* c_angel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = c_angel.c; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 				2291A1BD117EE3FD00854CBE /* c_angel.c */,
 				2291A1BE117EE3FD00854CBE /* c_lucifer.c */,
 				2291A1BF117EE3FD00854CBE /* c_streetfighter.c */,
-				2208AFE6118F28D800770C92 /* c_frenchie.c */,
+				2208AFE6118F28D800770C92 /* c_wash.c */,
 			);
 			path = agents;
 			sourceTree = "<group>";
