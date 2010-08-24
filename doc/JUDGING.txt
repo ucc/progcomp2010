@@ -1,0 +1,22 @@
+JUDGING.txt: An insight into the capricious and arbitrary mind of the organiser on how your agent will be judged.
+
+<<FIXME: check this is accurate and OK to publish>>
+
+IN SUMMARY: write clean, efficient, portable, smart code that just does what it's told and doesn't try to do anything it shouldn't. Don't rely on *anything* not expressed in sample code, or preferably, documentation. If in doubt, ask. 
+
+THINGS NOT TO DO:
+ - Inline assembler.
+ - Deliberately obfuscated code.
+ - Attempts to communicate between bots.
+ - File, network or system access.
+
+Other points:
+
+There are lots of divisions. Each division has its own prizes. How many divisions there are, and what the prizes are, depends on how much we get sponsored, and how creative I am at the time.
+
+Be honest in the divisions you sign up for, and don't play silly games. Trying to break the software, security, machines, my mind, etc., are all frowned upon and may result in instant disqualification, etc., as laid out in the rules.
+
+To win the most prizes:
+ - Allow your agent to be run on the scoreboard: I might give a prize to top-of-the-ladder agents.
+ - Make your agent as fast and efficient as possible - there might be *lots* of instances.
+ - Don't rely on points tables too much. I am interested in how agents perform in different situations - like a zero sum arena for example. If I ever get around to looking at this I will make it possible for your agent to query the points table.

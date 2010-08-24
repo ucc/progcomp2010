@@ -1,3 +1,5 @@
+<<PLEASE SEE THE CONTENTS OF doc/ FIRST>>
+
 Hi there,
 
 Thanks for taking interest in the UCC Programming Competition 2010. If you 
@@ -20,47 +22,5 @@ edit the first few lines of simulate.py to include your agent.
 ...and if all you're interested in is participating, that's it! You can stop
 reading, and start work on the agent that will outsmart them all!
 
-Contributor instructions:
-
-BaseAgent, LearningAgent and Supervisor are all implemented in uccProgComp.py.
-The 'select' algorithm, responsible for choosing agents for battle and
-determining when a round is finished, is the hottest part of the code and the
-most open to discussion and change. 
-
-Unfortunately, it is not an easy bit of code to understand. Once upon a time,
-in builds long past, it used friendly O(n) operations and conveniently wasted
-memory on simple tasks. After hours of profiling, it is a little more complex,
-but with a bit of background to how the supervisor operates you shouldn't have
-much trouble working out the rest:
-
-1.) A copy of the current population list is made at the beginning of the round
-representing the agents who can still fight. This reduces finding valid agents
-from O(n) to O(1). I call it the 'remaining' list.
-2.) Agents must remember their index in the population list. This is because it
-would be O(n) to determine their index in the population list (to remove them
-when they die) from their index in the 'remaining' list. Agents have this value
-stored at the beginning of the round - O(n) at the beginning of the round is
-far preferable to O(n) for every death.
-3.) The actual removal of agents from the population list must happen all at
-once in reverse numeric index order at the end of the round so that the stored
-index that agents have does not become stale. 
-
-There are problems. It's not perfect, but it's relatively fast and powerful and
-quite easy to adjust or reimplement once you get your head around it. I'm very
-much open to suggestion for improvement (especially in the form of patches) and
-welcome all help, constructive criticism, derisive criticism and death threats.
-
-Things to be done:
-
-1.) Pretty graphs! Iterate () returns a collection of statistics about each of
-the classes, which can be seen used in simulate.py. There are plenty of
-plotting packages out there that can turn this information into impressive
-charts.
-2.) More built-in functionality for BaseAgent and LearningAgent. They could
-both do with a few more utility functions for competitors to use.
-3.) A more succint set of rules and documentation.
-
-Thanks for reading!
-Luke
 
 * Or rather, it wil by the time this package is ready for distribution.

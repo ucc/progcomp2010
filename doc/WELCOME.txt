@@ -1,0 +1,30 @@
+Welcome to UCC::ProgComp 2010!
+
+This document will acquaint you with the competition: the rules, how to write an agent, and what you need to do to enter.
+
+=== What is UCC::ProgComp? ===
+Good question! The facetious answer is that it's the package whose documentation you are currently reading. The long answer is that it's a project of the University Computer Club (UCC), a student club affiliated with the Guild of Undergraduates at the University of Western Australia. UCC::ProgComp is designed to raise interest in programming and raise awareness of what UCC offers.
+
+=== Why should I enter? ===
+For a number of reasons:
+ - there are prizes.
+ - it's a low-risk opportunity to learn how to program or to practise your programming. You don't need to be an expert to enter, and it's a great way to do things that you might not otherwise get the opportunity to do.
+ - To meet other computer-oriented people around UCC.
+
+=== What's the basic premise? ===
+Entry in UCC::ProgComp is by writing an agent that plays a modified version of Rock-Paper-Scissors on the morally bankrupt underworld of RPS Island.
+
+On RPS Island, this classic game is considerably more complex: the attacking agent must bluff to the defending agent before making its real attack. Agents receive a moderate rewarded for being nice to each other and going for a mutually beneficial tie, but receive the most points for stabbing the other in the back.
+
+An agent consists of a Python, C/C++, Java or MATLAB file with 3 functions:
+
+ * A function to attack another bot.
+ * A function to defend itself against another bot.
+ * An optional function to receive the results of its battle, so that it can learn how other agents play.
+
+=== OK, how? ===
+Keep reading! Read HOWTO.txt, then go to README.txt to see what other documents are available.
+
+=== I've read everything and I'm still confused! ===
+Firstly, check the FAQs at http://progcomp.ucc.asn.au
+If you're still stumped, contact us via the link at http://progcomp.ucc.asn.au

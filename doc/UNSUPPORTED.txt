@@ -1,0 +1,4 @@
+UNSUPPORTED.txt: You should not need this file.
+
+Consult the website.
+FIXME: more info?

@@ -1,0 +1,48 @@
+HOWTO.txt: A beginners guide to entering the UCC::ProgComp 2010.
+
+If you get stuck at any point, consult, in this order:
+ - documentation for the ProgComp
+ - Google
+ - progcomp-orgainser@ucc.asn.au
+
+=== Setting up a development environment ===
+
+The ProgComp will work best for those running Mac OS X or Linux, but Windows is also supported.
+
+All competitors will need Python, a modern, object-oriented scripting languages. Python comes pre-installed on Mac OS X and modern Linuxes - Windows users must download it from http://www.python.org/download/releases/2.7/
+
+Then software you'll then need depends on the language in which you wish to program. The most up-to-date details, including some useful links, can be found at http://progcomp.ucc.asn.au/FAQs under "What software do I need to enter?"
+
+Set up the relevant software now - we'll assume you have it working in the rest of this document.
+
+=== Trying out the sample agents ===
+
+Full sample code is supplied for all the supported languages.
+
+Pull up a terminal/command line prompt. Change directory to the src/ subfolder (*nix path conventions will be used throughout) and type "python simulate.py -v"
+
+You should see some output as "Angel", "Lucifer", "Streetfighter" and "Wash", the 4 sample agents, battle it out. If you an error is raised, well, that's a bit awkward. It's probably due to your python installation - check that, check the FAQs, then google the error message, then if none of that works, contact us.
+
+If you're using Python, take some time to poke around at SampleAgents.py, then skip to the next section.
+
+If you're using C/C++, Java or MATLAB, follow the instructions in the src/link/<language> directory to get those agents running. Again, if something goes wrong, check the documentation, the FAQ, Google, and then if still stumped, contact us.
+
+Take some time to poke around at the sample code and get a handle on what's going on and how it works.
+
+=== Making your own ===
+
+Here's where you have to do the thinking. Your agent must consist of a single source file, and provide the same function definitions as the sample agents. 
+
+<<standardise location for agents?>>
+Put your code in the "agents/"
+
+Information about creating the relevant python wrapper script to allow your program to interface with the supervisor should be provided with the sample code for your language.
+<<FIXME>>
+
+=== Submitting your own agent ===
+
+Procedures for submitting your own agent will be released by email and on the website soon. Stay tuned.
+
+Submitting your agent is not the end of the fun, either. All going well*, there should be a running leaderboard, so you can watch your agent compete, if you wish, or you can keep its runnings secret until the final judgement.
+
+* This includes the organiser not dying of a caffeine overdose or developing a psychiatric injury as a result of overloading and co-ordinating. Your mileage may vary. UCC members may donate to the coke account 'dja' if they wish to keep me supplied with coke and pizza during this time.
