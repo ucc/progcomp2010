@@ -70,7 +70,7 @@ class Wash (LearningAgent):
 		return attack, bluff
 	def Defend (self, foe, bluff):
 		if Loss in LearningAgent.GetWinHistory (self, foe):
-			if bluff == Rock: attack = Scissors	# They've fucked us in the past,
+			if bluff == Rock: attack = Scissors	# They've screwed us in the past,
 			elif bluff == Paper: attack = Rock	# so we assume they're lying and
 			else: attack = Paper			# hoping we go for a kill.
 		else:

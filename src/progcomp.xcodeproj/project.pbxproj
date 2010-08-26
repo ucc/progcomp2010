@@ -11,7 +11,6 @@
 		228D541311DB443B00258478 /* CSampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = CSampleAgents.py; sourceTree = "<group>"; };
 		22CA010611D9BD51001ECDEF /* bundle-agent.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "bundle-agent.sh"; path = "link/bundle-agent.sh"; sourceTree = "<group>"; };
 		22CA010711D9C52B001ECDEF /* cAgent.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = cAgent.py; path = link/cAgent.py; sourceTree = "<group>"; };
-		22CAFEEA11D84076001ECDEF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22CAFEEB11D84076001ECDEF /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		22CAFEEC11D84076001ECDEF /* rpsconst.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = rpsconst.py; sourceTree = "<group>"; };
 		22CAFEED11D84076001ECDEF /* SampleAgents.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SampleAgents.py; sourceTree = "<group>"; };
@@ -28,7 +27,6 @@
 			isa = PBXGroup;
 			children = (
 				22CAFF7711D840CB001ECDEF /* link */,
-				22CAFEEA11D84076001ECDEF /* LICENSE */,
 				22CAFEEB11D84076001ECDEF /* README */,
 				22CAFEEC11D84076001ECDEF /* rpsconst.py */,
 				22CAFEED11D84076001ECDEF /* SampleAgents.py */,
