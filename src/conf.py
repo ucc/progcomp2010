@@ -9,7 +9,7 @@ VERBOSE = True
 DEBUG = False
 
 # How many iterations to run before quitting.
-MAX_ITERATIONS = 150
+MAX_ITERATIONS = 15
 
 # How many of each agent to create initially.
 STARTING_POPULATION = 10
@@ -31,9 +31,9 @@ MAX_AGE = 100
 
 # Game dynamics - these are not final:
 #                WINNER          TRUTH          ATTPoints, DEFPoints
-pointsTable     [Attacker]      [False] =       (2, -2)
+pointsTable     [Attacker]      [False] =       (3, -3)
 pointsTable     [Attacker]      [True]  =       (2, -2)
 pointsTable     [Defender]      [False] =       (-2, 2)
-pointsTable     [Defender]      [True]  =       (-2, 2)
+pointsTable     [Defender]      [True]  =       (-3, 3)
 pointsTable     [Tie]           [False] =       (0, 0)
 pointsTable     [Tie]           [True]  =       (1, 1)
