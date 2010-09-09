@@ -1,30 +1,109 @@
 Welcome to UCC::ProgComp 2010!
 
-This document will acquaint you with the competition: the rules, how to write an agent, and what you need to do to enter.
+This document will acquaint you with the competition: the rules, how to 
+write an agent, and what you need to do to enter.
 
-=== What is UCC::ProgComp? ===
-Good question! The facetious answer is that it's the package whose documentation you are currently reading. The long answer is that it's a project of the University Computer Club (UCC), a student club affiliated with the Guild of Undergraduates at the University of Western Australia. UCC::ProgComp is designed to raise interest in programming and raise awareness of what UCC offers.
+=== What is UCC::ProgComp? === Good question! The facetious answer is 
+that it's the package whose documentation you are currently reading. The 
+long answer is that it's a project of the University Computer Club 
+(UCC), a student club affiliated with the Guild of Undergraduates at the 
+University of Western Australia. UCC::ProgComp is designed to raise 
+interest in programming and raise awareness of what UCC offers.
 
-=== Why should I enter? ===
-For a number of reasons:
+=== Why should I enter? === For a number of reasons:
  - there are prizes.
- - it's a low-risk opportunity to learn how to program or to practise your programming. You don't need to be an expert to enter, and it's a great way to do things that you might not otherwise get the opportunity to do.
+ - it's a low-risk opportunity to learn how to program or to practise 
+your programming. You don't need to be an expert to enter, and it's a 
+great way to do things that you might not otherwise get the opportunity 
+to do.
  - To meet other computer-oriented people around UCC.
 
 === What's the basic premise? ===
-Entry in UCC::ProgComp is by writing an agent that plays a modified version of Rock-Paper-Scissors on the morally bankrupt underworld of RPS Island.
+Entry to the UCC::ProgComp 2010 is by writing an "agent".
 
-On RPS Island, this classic game is considerably more complex: the attacking agent must bluff to the defending agent before making its real attack. Agents receive a moderate rewarded for being nice to each other and going for a mutually beneficial tie, but receive the most points for stabbing the other in the back.
+Your agent spends its life in a dystopian RPS underworld, where at any 
+moment another agent could pick a fight with it, after which your agent 
+is obliged to pick a fight with yet another.
 
-An agent consists of a Python, C/C++, Java or MATLAB file with 3 functions:
+On RPS Island, battles are based on Rock-Paper-Scissors, but 
+considerably more involved: the attacking agent must bluff to the 
+defending agent before making its real attack.
+
+If an agent gets picked on for a fight and told rock, paper or scissors, 
+it can either get modest but mutually beneficial points by trying to 
+cause a tie, but risk being slaughtered by the other if it's lying (with 
+a small amount of points awarded if it wins "by accident"), or it can 
+try to win based on that information and get big points for exploiting 
+the other agent with a relatively small punishment for being "tricked" 
+and losing (and no point change in case of an "accidental" tie).
+
+Thus, in any single round there are bigger rewards and smaller 
+consequences in "attacking" the rock, paper or scissors that the enemy 
+agent claims it will use, but cooperation leads to mutual benefit and 
+good agents should turn against agents that try to exploit them. (The 
+full points table can be found in POINTS.txt)
+
+Agents start off with 50 points. If the agent loses all its points, it 
+dies. If it reaches 100 points, it forms a new agent and both return to 
+50 points. (However, the arena in which the agents battle is only so big 
+- if it's too crowded the agent will keep its points and not spawn a 
+child.)
+
+The agent can remember who it has battled in the past and what the other 
+agent has done, but it has no way of communicating this to any other 
+agent, and any "children" of the agent don't inherit this memory.
+
+To provide for both smart learning agents and agents that aren't so 
+complex, both 'long' (1000 round) and 'short' (100 round) variations 
+will be run. You are not allowed to submit different versions of your 
+agent for the different durations - you will have to make a tactical 
+decision about which to target.
+
+
+=== How do I win? ===
+The object of the game is for the descendants of your agent to be the 
+dominant species.
+
+Victory occurs when:
+ * You are the only species left.
+ * You are the most populous species at the 'end of time'.
+ * You are the most populous species when the judges determine that the 
+environment is stable.
+ * The judges say so.
+
+The agent that wins the most will be declared the overall victor.
+
+=== But won't I get thrashed by UCC's leet coders? ===
+
+There are a number of 'arenas' where your agent can battle, so that you 
+-hopefully - get the opportunity to compete with people of roughly your 
+own level of experience.
+
+There will be at least the following arenas:
+ - an arena for the units CITS1200, CITS1210, and GENG2140.
+ - an arena for first-years
+ - an arena for UCC members
+ - an open arena.
+ - any other arenas I think of before the submission deadline comes 
+around.
+
+You may enter your agent in as many arenas as you are eligible to enter. 
+However, you must enter the same agent for each arena.
+
+=== OK: how do I code that? ===
+
+An agent consists of a Python, C, C++, Java or MATLAB file with 3 
+functions:
 
  * A function to attack another bot.
  * A function to defend itself against another bot.
- * An optional function to receive the results of its battle, so that it can learn how other agents play.
+ * An optional function to receive the results of its battle, so that it 
+can learn how other agents play.
 
-=== OK, how? ===
-Keep reading! Read HOWTO.txt, then go to README.txt to see what other documents are available.
+Read HOWTO.txt for more info, then go to README.txt to see what other 
+documents are available.
 
 === I've read everything and I'm still confused! ===
-Firstly, check the FAQs at http://progcomp.ucc.asn.au
-If you're still stumped, contact us via the link at http://progcomp.ucc.asn.au
+
+Firstly, check the FAQs at <http://progcomp.ucc.asn.au>. If you're still 
+stumped, contact us via the link at <http://progcomp.ucc.asn.au>.
