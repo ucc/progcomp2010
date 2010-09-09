@@ -1,0 +1,9 @@
+POINTS.txt: The points table.
+
+WINNER		TRUTH/LIE	ATTACKER POINTS	DEFENDER POINTS
+Attacker	Lie		3		-3
+Attacker	Truth		2		-2
+Defender	Lie		-2		2
+Defender	Truth		-3		3
+Tie		Lie		0		0
+Tie		Truth		1		1
