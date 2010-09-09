@@ -2,14 +2,14 @@
 
 from rpsconst import *
 
-# Enable for verbose output.
-VERBOSE = True
+# Enable for verbose output. (or use -v)
+VERBOSE = False
 
 # Enable for even more verbose output.
 DEBUG = False
 
 # How many iterations to run before quitting.
-MAX_ITERATIONS = 15
+MAX_ITERATIONS = 1000
 
 # How many of each agent to create initially.
 STARTING_POPULATION = 10
@@ -29,7 +29,11 @@ DIE_HEALTH = 0
 # The age at which to kill any agent.
 MAX_AGE = 100
 
-# Game dynamics - these are not final:
+
+# Cap the number of agents:
+MAX_TOTAL_AGENTS = 255
+
+# Game dynamics:
 #                WINNER          TRUTH          ATTPoints, DEFPoints
 pointsTable     [Attacker]      [False] =       (3, -3)
 pointsTable     [Attacker]      [True]  =       (2, -2)
