@@ -153,12 +153,13 @@ class Supervisor:
 
 	@Debug
 	def SpawnAgent (self, agent):
-		child = agent.__class__ ()
-		self.population.append (child)
-		agent.Reproduced ()
-		stat = self.agentStats [str(agent.__class__)]
-		stat [0] += 1
-		stat [1] += 1 
+		if MAX_TOTAL_AGENTS > 0 and len(self.population) - len(self.pendingDeaths) < MAX_TOTAL_AGENTS:
+			child = agent.__class__ ()
+			self.population.append (child)
+			agent.Reproduced ()
+			stat = self.agentStats [str(agent.__class__)]
+			stat [0] += 1
+			stat [1] += 1
 
 	def Select (self):
 		# This approach causes agents to keep fighting until they've either died or reproduced.
