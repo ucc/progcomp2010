@@ -11,7 +11,9 @@ The first thing you'll probably want to do is see it work. Try running:
 to see the sample agents duke it out.
 
 This is a brief overview of the included files and directories:
- - SampleAgents.py : the sample agents. This is the bit you care about!
+ - USINGPYTHON.txt: A guide to writing an agent in Python.
+ - SampleAgents.py : the sample agents.
+ - agents/ : where you put your agent.
  - arenas/ : arenas define which agents play against which, and some other parameters.
  - link/ : Other languages belong here.
  - conf.py : has various useful things like the ability to turn on debug support.
