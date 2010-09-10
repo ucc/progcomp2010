@@ -11,10 +11,10 @@ DEBUG = False
 # How many iterations to run before quitting.
 MAX_ITERATIONS = 1000
 
-# How many of each agent to create initially.
+# How many of each agent to create initially. (or use -n)
 STARTING_POPULATION = 10
 
-# ???
+# Number of times the simulation is run. (or use -t)
 TRIALS = 1
 
 # How much health to give each agent on birth.
@@ -29,8 +29,7 @@ DIE_HEALTH = 0
 # The age at which to kill any agent.
 MAX_AGE = 100
 
-
-# Cap the number of agents:
+# Cap the number of agents (set to 0 to disable)
 MAX_TOTAL_AGENTS = 255
 
 # Game dynamics:
