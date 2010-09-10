@@ -28,7 +28,6 @@ RESULTTYPE RESULTOF[3][3] = { { tie, defender, attacker },
                               { attacker, tie, defender },
                               { defender, attacker, tie } };
 
-
 ITEMTYPE RandomAttack() {
 	return (ITEMTYPE)rand()%3;
 }
@@ -45,10 +44,10 @@ ITEMTYPE stringToItem( char * str ) {
 	
 
 RESULTTYPE stringToResult( char * str ) {
-    if (strcasecmp( str, "Attacker" ) == 0) return attacker;
-    if (strcasecmp( str, "Defender" ) == 0) return defender;
-    if (strcasecmp( str, "Tie" ) == 0) return tie;
-    /* If we reach this point, we've got real problems. */
+	if (strcasecmp( str, "Attacker" ) == 0) return attacker;
+	if (strcasecmp( str, "Defender" ) == 0) return defender;
+	if (strcasecmp( str, "Tie" ) == 0) return tie;
+	/* If we reach this point, we've got real problems. */
 	fprintf( stderr, "Attempt to convert invalid string \"%s\" into an ITEMTYPE! Aborting.\n", str );
 	exit(EXIT_FAILURE);
 	return -1;
@@ -61,47 +60,51 @@ int main( int argc, char * argv[] ) {
 	char foeName[MAXFOENAMELEN];
 	char attItem[MAXITEMLEN], defItem[MAXITEMLEN], bluffItem[MAXITEMLEN];
 	char didYouInstigate[MAXBOOLLEN];
-    char winner[MAXRESULTLEN];
+	char winner[MAXRESULTLEN];
 	int pointChange;
-	
+	void *thisInstance;
+
 	ATTACKTYPE attack;
 	ITEMTYPE defence;
 	
-    /* generate a random id for this bot. Hopefully it's unique
-       I can't use the UUID, because python doesn't pass it to me! */
-    me = rand();
-    
-    
+	/* generate a random id for this bot. Hopefully it's unique
+	   I can't use the UUID, because python doesn't pass it to me! */
+	me = rand();
+	
+	// TODO: Get the UUID passed by python
+	// Currently, just pass an empty string to the initialise function
+	thisInstance = Initialise( "" );
+	
 	scanf( "%s", command );
 	
 	while (strcasecmp("BYE",command) != 0) {
 		
 		if (strcasecmp("ATTACK", command) == 0) {
 			scanf( "%s", foeName );
-			attack = Attack( foeName );
+			attack = Attack( thisInstance, foeName );
 			printf("ATTACKING %s %s\n", ITEMNAMES[attack.realAttack], ITEMNAMES[attack.promisedAttack]);
 		
 		} else if (strcasecmp("DEFEND", command) == 0) {
 			scanf( "%s %s", foeName, bluffItem );
-			defence = Defend(foeName, stringToItem(bluffItem));
+			defence = Defend(thisInstance, foeName, stringToItem(bluffItem));
 			printf("DEFENDING %s\n", ITEMNAMES[defence]);
 		
 		} else if (strcasecmp("RESULTS", command) == 0) {
-            /* (foeName, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta) */
+			/* (foeName, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta) */
 			scanf( "%s %s %s %s %s %s %d", foeName, didYouInstigate, winner, attItem, defItem, bluffItem, &pointChange );
-			Results(foeName, (strcasecmp("True",didYouInstigate)==0), stringToResult(winner),
+			Results(thisInstance, foeName, (strcasecmp("True",didYouInstigate)==0), stringToResult(winner),
 					stringToItem(attItem), stringToItem(defItem), stringToItem(bluffItem), pointChange);
 			printf("OK\n");
 		}
 	
-        fflush(stdout);
-        fflush(stderr);
+		fflush(stdout);
+		fflush(stderr);
         
 		// read the next command!
 		scanf( "%s", command );
 	}
 	
-	Cleanup();
+	Cleanup(thisInstance);
 	
 	return 0;
 }

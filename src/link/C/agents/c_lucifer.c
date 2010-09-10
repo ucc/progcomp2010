@@ -13,7 +13,11 @@
 /* Implement the lucifer bot, which always lies expecting people to be good
    and always goes for the kill */
 
-ATTACKTYPE Attack( char * foe_name ) {
+void * Initialise( char * myName ) {
+	return NULL;
+}
+
+ATTACKTYPE Attack( void * this, char * foe_name ) {
 	ATTACKTYPE attack;
 	
 	attack.realAttack =  RandomAttack();
@@ -35,7 +39,7 @@ ATTACKTYPE Attack( char * foe_name ) {
 }
 
 /* Here we trust that they are telling the truth. And we try to kill them. */
-ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
+ITEMTYPE Defend( void * this, char * foeName, ITEMTYPE foePromisedAttack ) {
 	ITEMTYPE defence;
 	switch (foePromisedAttack) {
 		case rock:
@@ -53,7 +57,7 @@ ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack ) {
 
 /* You need to define a results function, even if it isn't used
  (otherwise the linker will complain) */
-void Results( char * foeName, int isInstigatedByYou, RESULTTYPE winner,
+void Results( void * this, char * foeName, int isInstigatedByYou, RESULTTYPE winner,
              ITEMTYPE attItem, ITEMTYPE defItem, ITEMTYPE bluffItem,
              int pointDelta ) {
 	
@@ -62,6 +66,6 @@ void Results( char * foeName, int isInstigatedByYou, RESULTTYPE winner,
 
 /* same for Cleanup() */
 
-void Cleanup() {
+void Cleanup( void * this ) {
 	return;
 }
