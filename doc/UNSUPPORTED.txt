@@ -1,4 +1,4 @@
-UNSUPPORTED.txt: This file describes the wire protocol. You should only need this if you're debugging an external agent, or if you're interested in writing an agent in an unsupported language.
+UNSUPPORTED.txt: This file describes the wire protocol. You should only need this if you're debugging a non-Python agent, or if you're interested in writing an agent in an unsupported language.
 
 If you are interested in using an unsupported language, consult the website for details on how to check with the organiser first.
 

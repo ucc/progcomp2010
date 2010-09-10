@@ -1,3 +1,4 @@
 Welcome! You've found the UCC::ProgComp 2010 kit.
 
-The full documentation is in the "doc" directory. Alternatively, if you want to dive straight into the code, see the "src" directory.
+The full documentation is in the "doc" directory. Alternatively, if you 
+want to dive straight into the code, see the "src" directory.

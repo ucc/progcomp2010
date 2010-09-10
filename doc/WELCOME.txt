@@ -3,14 +3,18 @@ Welcome to UCC::ProgComp 2010!
 This document will acquaint you with the competition: the rules, how to 
 write an agent, and what you need to do to enter.
 
-=== What is UCC::ProgComp? === Good question! The facetious answer is 
-that it's the package whose documentation you are currently reading. The 
-long answer is that it's a project of the University Computer Club 
-(UCC), a student club affiliated with the Guild of Undergraduates at the 
-University of Western Australia. UCC::ProgComp is designed to raise 
-interest in programming and raise awareness of what UCC offers.
+=== What is UCC::ProgComp? ===
 
-=== Why should I enter? === For a number of reasons:
+Good question! The facetious answer is that it's the package whose 
+documentation you are currently reading. The long answer is that it's a 
+project of the University Computer Club (UCC), a student club affiliated 
+with the Guild of Undergraduates at the University of Western Australia. 
+UCC::ProgComp is designed to raise interest in programming and raise 
+awareness of what UCC offers.
+
+=== Why should I enter? ===
+
+For a number of reasons:
  - there are prizes.
  - it's a low-risk opportunity to learn how to program or to practise 
 your programming. You don't need to be an expert to enter, and it's a 
@@ -19,6 +23,7 @@ to do.
  - To meet other computer-oriented people around UCC.
 
 === What's the basic premise? ===
+
 Entry to the UCC::ProgComp 2010 is by writing an "agent".
 
 Your agent spends its life in a dystopian RPS underworld, where at any 
@@ -61,6 +66,7 @@ decision about which to target.
 
 
 === How do I win? ===
+
 The object of the game is for the descendants of your agent to be the 
 dominant species.
 
