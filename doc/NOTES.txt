@@ -1,8 +1,7 @@
+NOTES.txt: development notes; issues that will be fixed in coming updates. hopefully.
+
  - number of agents can spiral out of control very quickly, e.g. if Wash and Angel start duking it out.
    * Need to make supervisor smart enough to kill monotonically increasing sequences.
    * Currently it can cap the number of bots; not sure if it does it in a fair way. It's presently entirely opportunistic; if you happen to be having a kid when the arena's full, you just silently fail and keep your points. This could result in an agent being able to spawn with 101 points if a gap comes up at the right time, while a 201 point agent isn't able to because he/she doesn't get in on time. Is this fair?
 
- - Python code seems to trust you not to monkey around with your stats...?
-
- - coding styles are inconsistent throughout
- - layout still needs some work
+ - Python code seems to trust you not to monkey around with your stats...? Will definitely be fixed before judging.

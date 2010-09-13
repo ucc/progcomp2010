@@ -1,4 +1,6 @@
-USINGPYTHON.txt: A 10 step guide to writing an agent in Python.
+USINGPYTHON.txt: An 11 step guide to writing an agent in Python.
+
+0. Watch the sample agents in action and flick through the documentation.
 
 1. Pick a name for your agent. Make sure the name is a valid python 
 identifier. Be original.
