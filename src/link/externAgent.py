@@ -110,13 +110,30 @@ class externAgent (BaseAgent):
         self.process.stdin.write ( string )
         self.process.stdout.readline() # read and discard (should be "OK")
         
-    def __del__(self):
-        try:
-            self.process.communicate( "BYE\r\n" )
-        except Exception, e:
-            print "Error in BYE:", self, ":", e
+        # we kill off the process here because otherwise the class doesn't get
+        # destroyed until the end of the iteration. This causes us to hold more
+        # than MAX_TOTAL_AGENTS open for a period of time, which is a bad thing.
+        if self.IsDead():
+            try:
+                self.process.communicate( "BYE\r\n" )
+            except Exception, e:
+                print "Error in BYE:", self, ":", e
             
-        try:
-            self.process.kill()
-        except:
-            None
+            try:
+                self.process.kill()
+            except:
+                None
+
+
+    def __del__(self):
+        #unless we're being deleted unexpectedly, this is a no-op.
+        if self.process.poll() == None:
+            try:
+                self.process.communicate( "BYE\r\n" )
+            except Exception, e:
+                print "Error in BYE:", self, ":", e
+            
+            try:
+                self.process.kill()
+            except:
+                None
