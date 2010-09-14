@@ -61,8 +61,9 @@ int main( int argc, char * argv[] ) {
 	char attItem[MAXITEMLEN], defItem[MAXITEMLEN], bluffItem[MAXITEMLEN];
 	char didYouInstigate[MAXBOOLLEN];
 	char winner[MAXRESULTLEN];
+	char uuid[UUIDLEN];  
 	int pointChange;
-	void *thisInstance;
+	void *thisInstance = NULL;
 
 	ATTACKTYPE attack;
 	ITEMTYPE defence;
@@ -71,27 +72,30 @@ int main( int argc, char * argv[] ) {
 	   I can't use the UUID, because python doesn't pass it to me! */
 	me = rand();
 	
-	// TODO: Get the UUID passed by python
-	// Currently, just pass an empty string to the initialise function
-	thisInstance = Initialise( "" );
-	
 	scanf( "%s", command );
 	
 	while (strcasecmp("BYE",command) != 0) {
 		
-		if (strcasecmp("ATTACK", command) == 0) {
+		if (strcasecmp("HI", command) == 0) {
+			scanf( "%s", uuid );
+			thisInstance = Initialise( uuid );
+		}
+		else if (strcasecmp("ATTACK", command) == 0) {
 			scanf( "%s", foeName );
+			if( !thisInstance )	break;
 			attack = Attack( thisInstance, foeName );
 			printf("ATTACKING %s %s\n", ITEMNAMES[attack.realAttack], ITEMNAMES[attack.promisedAttack]);
 		
 		} else if (strcasecmp("DEFEND", command) == 0) {
 			scanf( "%s %s", foeName, bluffItem );
+			if( !thisInstance )	break;
 			defence = Defend(thisInstance, foeName, stringToItem(bluffItem));
 			printf("DEFENDING %s\n", ITEMNAMES[defence]);
 		
 		} else if (strcasecmp("RESULTS", command) == 0) {
 			/* (foeName, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta) */
 			scanf( "%s %s %s %s %s %s %d", foeName, didYouInstigate, winner, attItem, defItem, bluffItem, &pointChange );
+			if( !thisInstance )	break;
 			Results(thisInstance, foeName, (strcasecmp("True",didYouInstigate)==0), stringToResult(winner),
 					stringToItem(attItem), stringToItem(defItem), stringToItem(bluffItem), pointChange);
 			printf("OK\n");
@@ -104,7 +108,8 @@ int main( int argc, char * argv[] ) {
 		scanf( "%s", command );
 	}
 	
-	Cleanup(thisInstance);
+	if( !thisInstance )
+		Cleanup(thisInstance);
 	
 	return 0;
 }

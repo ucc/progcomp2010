@@ -14,6 +14,7 @@
 #define MAXITEMLEN		10
 #define MAXRESULTLEN    10
 #define MAXBOOLLEN		6
+#define UUIDLEN	37	// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (8-4-4-4-12) + 1 null
 
 /********** Type definitions **********/
 
