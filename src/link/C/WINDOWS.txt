@@ -1,0 +1,38 @@
+WINDOWS.txt: Notes towards using C under Microsoft Windows.
+
+Whilst we are committed to supporting Windows, unfortunately Windows 
+support is not complete at this point. Whilst there is nothing in the 
+code that is specifically incompatible with Windows, it is entirely 
+untested, and there may be a number of tweaks that Windows users will 
+have to make in order to compete.
+
+ = Options for Windows Users =
+
+ - Install a *nix compatibility layer, such as Cygwin or MinGW, which 
+will allow you to develop as if on Linux. This is *by* *far* the 
+simplest route: everything should, in theory, just work. However, it's 
+untested.
+
+ - Attempt to use native Windows tools. If you choose to go down this 
+path, note the following:
+    - agents are compiled by linking c_link together with the agent 
+source.
+    - c_agents would need to be modified to use windows style paths 
+instead of POSIX paths.
+    - The externAgent wrapper may need to be tweaked.
+
+Either way, be aware that the supervisor will spawn a *lot* of processes 
+- up to 255 child processes. How Windows will cope with that, is, as 
+mentioned before, totally untested.
+
+ = Alternatives =
+
+There are some alternatives to development in Windows that may be open 
+to you:
+ - If you are a CS or Engineering student at UWA, use Mac or Linux 
+machines in the CS labs.
+ - If you are a UCC member, use either our Mac or one of the Linux 
+machines.
+
+These environments, if available to you, are preferable to development 
+on Windows.

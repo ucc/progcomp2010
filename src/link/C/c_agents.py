@@ -1,5 +1,5 @@
 # add your agents to this file by copying the definition and adjusting
-# you then need to modify simulate.py
+# you then need to make sure there's an arena that imports your agent
 
 from link.cAgent import cAgent
 
