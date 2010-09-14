@@ -35,7 +35,7 @@
 /* data for each instance of my agent */
 typedef struct {
 	/* The name of the n-th foe who has beaten us */
-	char (*defeatingFoes)[MAXFOENAMELEN];
+	char (*defeatingFoes)[MAXAGENTNAMELEN];
 
 	/* The length of the array, and how far we are along it */
 	size_t foesLen;
@@ -50,7 +50,7 @@ int haveLostTo( wash_data * me, char * foeName ) {
     
     /* check every foe we know to have defeated us */
     for (foe=0; foe<me->foesCount; foe++) {
-        if (strncmp( me->defeatingFoes[foe], foeName, MAXFOENAMELEN) == 0) {
+        if (strncmp( me->defeatingFoes[foe], foeName, MAXAGENTNAMELEN) == 0) {
             //debugmsg( "%d\thaveLostTo( %s ) -> Yes\n", me, foeName );
             return 1;
         }
@@ -64,7 +64,7 @@ int haveLostTo( wash_data * me, char * foeName ) {
 void * Initialise( char * myName ) {
 	wash_data * me = malloc( sizeof( wash_data ) );
 	
-	me->defeatingFoes = calloc( NUMBEROFAGENTSGUESS, sizeof( MAXFOENAMELEN*sizeof(char) ) );
+	me->defeatingFoes = calloc( NUMBEROFAGENTSGUESS, sizeof( MAXAGENTNAMELEN*sizeof(char) ) );
 	me->foesLen = NUMBEROFAGENTSGUESS;
     me->foesCount = 0;
 	
@@ -149,7 +149,7 @@ void Results( void * this, char * foeName, int isInstigatedByYou,
     
     /* if we've already lost the foe, don't store again */
     for (foe=0; foe<me->foesCount; foe++) {
-        if (strncmp( me->defeatingFoes[foe], foeName, MAXFOENAMELEN ) == 0) {
+        if (strncmp( me->defeatingFoes[foe], foeName, MAXAGENTNAMELEN ) == 0) {
             /* we've found it! */
             return;
         }
@@ -159,11 +159,11 @@ void Results( void * this, char * foeName, int isInstigatedByYou,
     if (me->foesCount==me->foesLen) {
         /* double the array size. This should error check, but doesn't */
         me->defeatingFoes = realloc( me->defeatingFoes, 
-		                             me->foesLen*2*sizeof( MAXFOENAMELEN*sizeof(char) ) );
+		                             me->foesLen*2*sizeof( MAXAGENTNAMELEN*sizeof(char) ) );
         me->foesLen *= 2;
     }
     
-    strncpy( me->defeatingFoes[me->foesCount], foeName, MAXFOENAMELEN );
+    strncpy( me->defeatingFoes[me->foesCount], foeName, MAXAGENTNAMELEN );
     me->foesCount++;
     
     return;

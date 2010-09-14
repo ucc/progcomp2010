@@ -16,11 +16,13 @@ class externAgent (BaseAgent):
         BaseAgent.__init__(self)
         try:
             self.process = subprocess.Popen(externName, stdin=subprocess.PIPE, 
-                                            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                            stdout=subprocess.PIPE,
                                             universal_newlines=True)
         except Exception, e:
             print ("Error spawning \"%s\": " % externName), e
-            
+           
+        self.process.stdin.write ( ' '.join( ["HI", repr(self.GetID()), "\r\n"] ) )
+
     def stringToItem( self, str ):
         if str == "Rock":
             return Rock
@@ -73,7 +75,7 @@ class externAgent (BaseAgent):
             return attack, bluff
         except:
             #agent is insane
-            print "Agent is insane:", self
+            print "Agent is insane:", self, self.GetID()
             pass
         
     def Defend (self, foe, bluff ):
@@ -85,7 +87,7 @@ class externAgent (BaseAgent):
             return defence
         except:
             #agent is insane
-            print "Agent is insane:", self
+            print "Agent is insane:", self, self.GetID()
             pass
 
     def Results (self, foe, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta):

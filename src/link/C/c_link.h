@@ -10,11 +10,10 @@
 #include <stdio.h>
 
 #define MAXCOMMANDLEN	15
-#define MAXFOENAMELEN	50
+#define MAXAGENTNAMELEN	42 /* 40 digits, 'L', and NULL */
 #define MAXITEMLEN		10
 #define MAXRESULTLEN    10
 #define MAXBOOLLEN		6
-#define UUIDLEN	42	// 40 digits, 'L' and NULL
 
 /********** Type definitions **********/
 
@@ -37,14 +36,13 @@ typedef struct {
 
 /* prints a debug message. Same arguments as printf().
    (you can't use printf because it is used to talk between
-    the agent and supervisor) 
+    the agent and supervisor)
+	
+	Hint: store the name passed to you in Initalise and use it to uniquely
+	identify the agent sending the message.
  */
 
 #define debugmsg(x...) fprintf(stderr, x)
-
-/* A (hopefully) unique identifier for this particular instance of your agent,
-   to help with debugging */
-int me;
 
 
 /* Returns a random item */
