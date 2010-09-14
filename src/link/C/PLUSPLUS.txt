@@ -1,0 +1,12 @@
+PLUSPLUS.txt: A guide to using C++
+
+C++ is officially supported, but (much like Windows) entirely untested 
+at present. In theory, using it should simply require you to develop 
+your agent in C++, compile it, and link it with c_link - just as for a C 
+agent.
+
+However, the makefile will *not* build your agent if it does not end in 
+".c". This is a bug, and hopefully we'll get around to fixing it soon. 
+In the mean time, you will have to either fix the makefile (please send 
+me a copy at progcomp-organiser@ucc.asn.au if you do) or simply manually 
+compile your agent.

@@ -16,11 +16,13 @@ class externAgent (BaseAgent):
         BaseAgent.__init__(self)
         try:
             self.process = subprocess.Popen(externName, stdin=subprocess.PIPE, 
-                                            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                            stdout=subprocess.PIPE,
                                             universal_newlines=True)
         except Exception, e:
             print ("Error spawning \"%s\": " % externName), e
-            
+           
+        self.process.stdin.write ( ' '.join( ["HI", repr(self.GetID()), "\r\n"] ) )
+
     def stringToItem( self, str ):
         if str == "Rock":
             return Rock
@@ -73,7 +75,7 @@ class externAgent (BaseAgent):
             return attack, bluff
         except:
             #agent is insane
-            print "Agent is insane:", self
+            print "Agent is insane:", self, self.GetID()
             pass
         
     def Defend (self, foe, bluff ):
@@ -85,7 +87,7 @@ class externAgent (BaseAgent):
             return defence
         except:
             #agent is insane
-            print "Agent is insane:", self
+            print "Agent is insane:", self, self.GetID()
             pass
 
     def Results (self, foe, isInstigatedByYou, winner, attItem, defItem, bluffItem, pointDelta):
@@ -110,13 +112,30 @@ class externAgent (BaseAgent):
         self.process.stdin.write ( string )
         self.process.stdout.readline() # read and discard (should be "OK")
         
-    def __del__(self):
-        try:
-            self.process.communicate( "BYE\r\n" )
-        except Exception, e:
-            print "Error in BYE:", self, ":", e
+        # we kill off the process here because otherwise the class doesn't get
+        # destroyed until the end of the iteration. This causes us to hold more
+        # than MAX_TOTAL_AGENTS open for a period of time, which is a bad thing.
+        if self.IsDead():
+            try:
+                self.process.communicate( "BYE\r\n" )
+            except Exception, e:
+                print "Error in BYE:", self, ":", e
             
-        try:
-            self.process.kill()
-        except:
-            None
+            try:
+                self.process.kill()
+            except:
+                None
+
+
+    def __del__(self):
+        #unless we're being deleted unexpectedly, this is a no-op.
+        if self.process.poll() == None:
+            try:
+                self.process.communicate( "BYE\r\n" )
+            except Exception, e:
+                print "Error in BYE:", self, ":", e
+            
+            try:
+                self.process.kill()
+            except:
+                None

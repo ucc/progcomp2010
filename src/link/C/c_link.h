@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 #define MAXCOMMANDLEN	15
-#define MAXFOENAMELEN	50
+#define MAXAGENTNAMELEN	42 /* 40 digits, 'L', and NULL */
 #define MAXITEMLEN		10
 #define MAXRESULTLEN    10
 #define MAXBOOLLEN		6
@@ -36,14 +36,13 @@ typedef struct {
 
 /* prints a debug message. Same arguments as printf().
    (you can't use printf because it is used to talk between
-    the agent and supervisor) 
+    the agent and supervisor)
+	
+	Hint: store the name passed to you in Initalise and use it to uniquely
+	identify the agent sending the message.
  */
 
 #define debugmsg(x...) fprintf(stderr, x)
-
-/* A (hopefully) unique identifier for this particular instance of your agent,
-   to help with debugging */
-int me;
 
 
 /* Returns a random item */
@@ -62,26 +61,37 @@ extern RESULTTYPE RESULTOF[3][3];
 /********** Bot Function definitions **********/
 /* You need to provide implementations for these to create a bot */
 
-/* Defend( foeName : string - the name of your foe;
+/* Initialise( yourName : string - name of this instance (you)
+             ) : void * - A data pointer to represent this instance
+ 
+ Called to create a new instance of this agent
+
+ */
+void *Initialise( char * yourName );
+
+/* Defend( this : pointer - value returned from Initialise();
+           foeName : string - the name of your foe;
            foePromisedAttack : ITEMTYPE - the item your foe promised to use
          ) : ITEMTYPE - the item you wish to use to defend;
  
  Called when your agent needs to defend itself.
  
  */
-ITEMTYPE Defend( char * foeName, ITEMTYPE foePromisedAttack );
+ITEMTYPE Defend( void * this, char * foeName, ITEMTYPE foePromisedAttack );
 
 
-/* Attack( foeName : string - the name of your foe
+/* Attack( this: pointer - value returned from Initialise();
+           foeName : string - the name of your foe
 		 ) : ATTACKTYPE - the real and promised attack you wish to use
 
  Called when your agent needs to attack another agent.
  
  */
-ATTACKTYPE Attack( char * foeName );
+ATTACKTYPE Attack( void * this, char * foeName );
 
 
-/* Results( foeName : string - the name of your foe;
+/* Results( this : pointer - value returned from Initialise();
+            foeName : string - the name of your foe;
             isInstigatedByYou : 0=you defended/1=you attacked;
             winner : RESULTTYPE - who won
 			attItem : ITEMTYPE - the item used to attack;
@@ -93,14 +103,15 @@ ATTACKTYPE Attack( char * foeName );
  Called after your agent battles another agent, to tell you how the battle goes.
  
  */
-void Results( char * foeName, int isInstigatedByYou, RESULTTYPE winner,
+void Results( void * this, char * foeName, int isInstigatedByYou, RESULTTYPE winner,
               ITEMTYPE attItem, ITEMTYPE defItem, ITEMTYPE bluffItem,
               int pointDelta );
 
-/* Cleanup();
+/* Cleanup( this: pointer - value returned from Initialise()
+          );
 
    Called when your agent is no longer needed, either due to the round ending
    or due to your agent being eliminated.
 
  */
-void Cleanup();
+void Cleanup( void * this );
