@@ -7,10 +7,13 @@ If you are interested in using an unsupported language, consult the website for 
 The syntax for input and output is as follows. Every line of input given by the supervisor must be replied with the correct response.
 Segmentation fault is never the correct response :-). Rumour has it that if you just use Python, this won't happen. 
 
-The angle brackets (<>) indicate whether the line is output from the agent or input to it respectively, and are not part of the actual formatting.
+The angle brackets (<>) indicate whether the line is output from the agent or input to it respectively, and are not part of the actual formatting
+
+Canonical lengths of the following strings are in src/link/C/c_link.[ch]
 
 Syntax for when your agent is spawned:
 >HI uuid
+{no response}
 
 Syntax for an attacking agent:
 >ATTACK foeName
