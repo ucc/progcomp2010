@@ -73,6 +73,10 @@ submit it there! Otherwise, sit tight.
 10. Watch its progress on the scoreboard and adjust your strategy 
 accordingly.
 
+=== C++ ===
+
+See PLUSPLUS.txt.
+
 === OTHER IMPORTANT NOTES ===
 
  * Static storage *is* *considered* *cheating*. You must *not* attempt 
