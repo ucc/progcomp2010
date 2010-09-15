@@ -32,10 +32,12 @@
    gospel on the number of agents you're going to see. */
 #define NUMBEROFAGENTSGUESS 100
 
+typedef char agentName[MAXAGENTNAMELEN];
+
 /* data for each instance of my agent */
 typedef struct {
 	/* The name of the n-th foe who has beaten us */
-	char (*defeatingFoes)[MAXAGENTNAMELEN];
+	agentName * defeatingFoes;
 
 	/* The length of the array, and how far we are along it */
 	size_t foesLen;
@@ -64,7 +66,7 @@ int haveLostTo( wash_data * me, char * foeName ) {
 void * Initialise( char * myName ) {
 	wash_data * me = malloc( sizeof( wash_data ) );
 	
-	me->defeatingFoes = calloc( NUMBEROFAGENTSGUESS, sizeof( MAXAGENTNAMELEN*sizeof(char) ) );
+	me->defeatingFoes = calloc( NUMBEROFAGENTSGUESS, sizeof( agentName ) );
 	me->foesLen = NUMBEROFAGENTSGUESS;
     me->foesCount = 0;
 	
@@ -159,7 +161,7 @@ void Results( void * this, char * foeName, int isInstigatedByYou,
     if (me->foesCount==me->foesLen) {
         /* double the array size. This should error check, but doesn't */
         me->defeatingFoes = realloc( me->defeatingFoes, 
-		                             me->foesLen*2*sizeof( MAXAGENTNAMELEN*sizeof(char) ) );
+		                             me->foesLen*2*sizeof( agentName ) );
         me->foesLen *= 2;
     }
     
