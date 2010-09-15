@@ -9,7 +9,8 @@ VERBOSE = False
 DEBUG = False
 
 # How many iterations to run before quitting.
-MAX_ITERATIONS = 1000
+# This is 100 for the short version and 1000 for the long version
+MAX_ITERATIONS = 100
 
 # How many of each agent to create initially. (or use -n)
 STARTING_POPULATION = 10
@@ -27,9 +28,11 @@ REPRODUCE_HEALTH = 100
 DIE_HEALTH = 0
 
 # The age at which to kill any agent.
+# This is 100 for the short version and 1000 for the long version
 MAX_AGE = 100
 
 # Cap the number of agents (set to 0 to disable)
+# you may also need to run ulimit -n <some big number like 1000>
 MAX_TOTAL_AGENTS = 255
 
 # Game dynamics:
