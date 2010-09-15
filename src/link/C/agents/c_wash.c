@@ -1,5 +1,5 @@
 /*
- *  c_frechie.c
+ *  c_wash.c
  *  c-link-lib
  *
  *  Created by Daniel Axtens on 22/04/10.
